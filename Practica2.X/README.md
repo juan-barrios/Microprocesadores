@@ -33,6 +33,8 @@ Se implementó una secuencia lógica temporal para mostrar de manera cíclica cu
 
 A continuación se muestra la matriz de datos de diseño y los marcadores de evidencia visual:
 
+<img width="3072" height="4096" alt="IMG_20260604_165131" src="https://github.com/user-attachments/assets/5c0ffa35-5a4b-4a91-9ec8-a85b0413b3e8" />
+
 | Actividad / Carácter | Descripción del Estado Visual | Registro de Estado en Pines (Ejemplo) | Evidencia de Funcionamiento |
 | :--- | :--- | :--- | :--- |
 | **Actividad en Clase ("X")** | Encendido de las dos diagonales principales de la matriz 8x8. | `0x81, 0x42, 0x24, 0x18, 0x18, 0x24, 0x42, 0x81` | <img width="3072" height="4096" alt="IMG_20260604_165114" src="https://github.com/user-attachments/assets/60b0129c-fcf0-4d8b-87bd-81fb94d9ac8b" />|
