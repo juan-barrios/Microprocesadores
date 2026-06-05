@@ -51,4 +51,4 @@ Erick:
 Con esta práctica aprendí cómo funciona la multiplexación para controlar una matriz LED de 8x8 con el PIC16F887. Al encender las filas y columnas a alta velocidad, aprovechamos un efecto visual para mostrar figuras y letras sin parpadeo, usando muy pocos pines del microcontrolador. Diseñar los códigos en hexadecimal para las iniciales (J, B, E y H) y coordinar los tiempos me ayudó a entender cómo hacer un uso más eficiente del hardware mediante el código.
 
 Juan:
-* 
+Mediante este laboratorio, pude aprender de mucho mejor manera cómo emplear el PIC para controlar la matriz led, que era una nueva forma de representar resultados. Además, cada vez entiendo mejor la manera en la que se debe de programar el sistema, lo que me da ideas de cosas o aplicaciones que podemos tener con los microprocesadores en un futuro.
