@@ -35,11 +35,16 @@ A continuación se muestra la matriz de datos de diseño y los marcadores de evi
 
 | Actividad / Carácter | Descripción del Estado Visual | Registro de Estado en Pines (Ejemplo) | Evidencia de Funcionamiento |
 | :--- | :--- | :--- | :--- |
-| **Actividad en Clase ("X")** | Encendido de las dos diagonales principales de la matriz 8x8. | `0x81, 0x42, 0x24, 0x18, 0x18, 0x24, 0x42, 0x81` | [IMAGEN] |
-| **Letra J** | Primera inicial (Juan). | `0x1,0x1,0x1,0x1,0x1,0x1,0x1,0xFF` | [IMAGEN] |
-| **Letra B** | Segunda inicial (Juan). | `0xFF,0x81,0x81,0x82,0xFF,0x82,0x81,0xFF` | [IMAGEN] |
-| **Letra E** | Primera inicial (Erick). | `0xFF,0x80,0x80,0x80,0xFF,0x80,0x80,0xFF` | [IMAGEN] |
-| **Letra H** | Segunda inicial (Erick). | `0x81,0x81,0x81,0x81,0xFF,0x81,0x81,0x81` | [IMAGEN] |
+| **Actividad en Clase ("X")** | Encendido de las dos diagonales principales de la matriz 8x8. | `0x81, 0x42, 0x24, 0x18, 0x18, 0x24, 0x42, 0x81` | [<img width="3072" height="4096" alt="IMG_20260604_165114" src="https://github.com/user-attachments/assets/60b0129c-fcf0-4d8b-87bd-81fb94d9ac8b" />
+] |
+| **Letra J** | Primera inicial (Juan). | `0x1,0x1,0x1,0x1,0x1,0x1,0x1,0xFF` | [<img width="3072" height="4096" alt="IMG_20260604_164939" src="https://github.com/user-attachments/assets/16e65566-e5c4-4062-bbb4-1b7ba5546e35" />
+] |
+| **Letra B** | Segunda inicial (Juan). | `0xFF,0x81,0x81,0x82,0xFF,0x82,0x81,0xFF` | [<img width="3072" height="4096" alt="IMG_20260604_164906" src="https://github.com/user-attachments/assets/8afa8a80-6872-42dd-9b3f-403c190c53bb" />
+] |
+| **Letra E** | Primera inicial (Erick). | `0xFF,0x80,0x80,0x80,0xFF,0x80,0x80,0xFF` | [<img width="3072" height="4096" alt="IMG_20260604_164909" src="https://github.com/user-attachments/assets/e611e983-5bd1-44eb-a5c0-721e5a8dc33c" />
+] |
+| **Letra H** | Segunda inicial (Erick). | `0x81,0x81,0x81,0x81,0xFF,0x81,0x81,0x81` | [<img width="3072" height="4096" alt="IMG_20260604_164913" src="https://github.com/user-attachments/assets/7ea3f857-8961-45f3-a123-717a4feb1660" />
+] |
 
 ---
 
