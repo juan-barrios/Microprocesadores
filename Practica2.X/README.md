@@ -47,5 +47,8 @@ A continuación se muestra la matriz de datos de diseño y los marcadores de evi
 ---
 
 ## Conclusiones
+Erick:
+Con esta práctica aprendí cómo funciona la multiplexación para controlar una matriz LED de 8x8 con el PIC16F887. Al encender las filas y columnas a alta velocidad, aprovechamos un efecto visual para mostrar figuras y letras sin parpadeo, usando muy pocos pines del microcontrolador. Diseñar los códigos en hexadecimal para las iniciales (J, B, E y H) y coordinar los tiempos me ayudó a entender cómo hacer un uso más eficiente del hardware mediante el código.
 
+Juan:
 * 
