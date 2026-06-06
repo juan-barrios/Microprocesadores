@@ -58,4 +58,5 @@ A continuación, se presenta la tabla de conversión utilizada en el procedimien
 Juan:
 
 Erick:
+
 Esta práctica me ayudó a entender cómo se controlan los displays de 7 segmentos mediante un microcontrolador. Al trabajar con la configuración de cátodo común en el PIC16F887, aprendí a traducir números decimales y letras hexadecimales a código binario para encender los segmentos correctos de forma ordenada. Crear la tabla de conversión del 0 al F y ver el resultado en físico me demostró cómo los puertos de salida del microcontrolador manejan la información digital para interactuar con el mundo real de manera visual y clara
