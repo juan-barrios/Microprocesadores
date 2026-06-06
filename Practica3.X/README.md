@@ -46,10 +46,11 @@ A continuación, se presenta la tabla de conversión utilizada en el procedimien
 | **F** | `0,1,1,1,0,0,0,1` | `0b01110001` | `0x8E` |
 
 ### Evidencia Fotográfica / Diagramas
+<img width="3072" height="4096" alt="IMG_20260605_155506" src="https://github.com/user-attachments/assets/3bb0846c-f765-421a-859e-46c601f7cc4a" />
 
 | Diagrama de Conexión | Actividad 1 | Actividad 2 |
 | :---: | :---: | :---: |
-| ![Diagrama Proteus] | ![Act 1] | ![Act 2] |
+|<img width="1006" height="450" alt="image" src="https://github.com/user-attachments/assets/87fa7a07-e0a2-421e-aac6-e99b644dcf27" />|<img width="248" height="441" alt="VID_20260605_155219 (1)" src="https://github.com/user-attachments/assets/ab144880-d171-4df1-8e71-5aa3894570a7" />|  <img width="248" height="441" alt="VID_20260605_155416 (1)" src="https://github.com/user-attachments/assets/e218badb-453a-4727-b402-ebe5bf7ecefa" />|
 
 ---
 
