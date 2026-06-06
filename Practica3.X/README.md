@@ -24,7 +24,7 @@ Durante el desarrollo de esta práctica se completaron satisfactoriamente dos ac
 ### Actividad 1 y 2: Secuencias Decimal y Hexadecimal
 Se logró mostrar la secuencia numérica del **0 al 9** (Actividad 1) y posteriormente se extendió el código para mostrar los dígitos del **0 al F** en hexadecimal (Actividad 2). 
 
-A continuación, se presenta la tabla de conversión utilizada en el procedimiento para determinar los valores a enviar al puerto del microcontrolador. *(Nota: Se asume que el orden de los bits del puerto va del bit 7 al bit 0, correspondiendo a `dp, g, f, e, d, c, b, a`)*.
+A continuación, se presenta la tabla de conversión utilizada en el procedimiento para determinar los valores a enviar al puerto del microcontrolador. *(Nota: Se asume que el orden de los bits del puerto va del bit 7 al bit 0, correspondiendo a `a, b, c, d, e, f, g, dp`)*.
 
 | Dígito / Carácter | Segmentos a encender (a,b,c,d,e,f,g,dp) | Valor Binario | Valor Hexadecimal |
 | :---: | :---: | :---: | :---: |
