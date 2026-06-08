@@ -56,6 +56,7 @@ A continuación, se presenta la tabla de conversión utilizada en el procedimien
 
 ## Conclusiones
 Juan:
+Durante este laboratorio pude aprender sobre cómo integrar los conocimientos de la clase de Sistemas Digitales, con los temas actuales de Microprocesadores, de modo que tengo más ideas sobre las posibles aplicaciones que los aprendizajes de esta materia pueden tener en el mundo laboral, o, inclusive, en proyectos personales. Además, se puede comprender de forma más práctica cómo emplear el PIC y sus puertos para lograr tareas específicas.
 
 Erick:
 
