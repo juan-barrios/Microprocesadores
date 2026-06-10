@@ -39,9 +39,9 @@ Se programó un contador de dos dígitos, mostrando el resultado en displays. El
 
 | Descripción de la Evidencia | Imagen / Video |
 | :--- | :---: |
-| **Diagrama de Conexión (Proteus)** | *[Insertar imagen del diagrama aquí]* |
-| **Actividad de Clase (3 LEDs y 3 Botones)** | *IMG* |
-| **Actividad 1 (Contador 0-99 Funcionando)** | *IMG* |
+| **Diagrama de Conexión (Proteus)** | <img width="1174" height="647" alt="image" src="https://github.com/user-attachments/assets/a866a230-f89a-4d87-9100-7bf8d181db64" />|
+| **Actividad de Clase (3 LEDs y 3 Botones)** | <img width="291" height="517" alt="VID_20260608_161150 (1)" src="https://github.com/user-attachments/assets/3f97288b-af9f-4a9f-b286-358723569a36" />|
+| **Actividad 1 (Contador 0-99 Funcionando)** | <img width="280" height="498" alt="VID_20260608_160820 (2)" src="https://github.com/user-attachments/assets/d56c5391-a1ba-4914-90bc-e3fa697a8961" />|
 
 ---
 
