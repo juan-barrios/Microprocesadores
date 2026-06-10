@@ -49,6 +49,7 @@ Se programó un contador de dos dígitos, mostrando el resultado en displays. El
 
 Juan:
 
+Durante esta práctica me quedó mucho más claro cómo es que se deben de emplear los puertos para usarlos como entradas/salidas, de forma que podamos ajustarlos a las necesidades de cada actividad que queramos realizar. Aunado a lo anterior, poder aplicar lógica desde el código, como el uso de un multiplicador me enseñó que muchas de las cosas que solíamos realizar como proyectos en otras materias, pero que sólo se quedaban en el software, pueden aplicarse al mundo real, mediante el uso de microprocesadores.
 
 Erick:
 
