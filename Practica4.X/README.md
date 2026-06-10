@@ -51,3 +51,5 @@ Juan:
 
 
 Erick:
+
+Esta práctica me permitió entender cómo coordinar entradas y salidas simultáneas en el PIC16F887 para crear un sistema interactivo. Lo más interesante fue programar la lógica del contador para que las decenas y las unidades se actualizaran de forma independiente en los puertos C y D. Además, implementar las condiciones de ciclo infinito (pasar de 99 a 00 y viceversa) y el botón multiplicador me ayudó a comprender cómo estructurar algoritmos de control más avanzados basados en las decisiones del usuario en tiempo real.
