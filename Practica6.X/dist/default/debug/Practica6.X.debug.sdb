@@ -1,0 +1,109 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F887 ]
+[d frameptr 0 ]
+"10 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"16 C:\Users\juang\MPLABXProject\Microprocesadores\Practica6.X\lcd.c
+[v _LCD_Out LCD_Out `(v  1 e 1 0 ]
+"48
+[v _LCD_Write LCD_Write `(v  1 e 1 0 ]
+"59
+[v _LCD_Init LCD_Init `(a  1 e 1 0 ]
+"117
+[v _LCD_putc LCD_putc `(v  1 e 1 0 ]
+"142
+[v _LCD_putrs LCD_putrs `(v  1 e 1 0 ]
+"34 C:\Users\juang\MPLABXProject\Microprocesadores\Practica6.X\main.c
+[v _main main `(v  1 e 1 0 ]
+"150 C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h
+[v _PORTA PORTA `VEuc  1 e 1 @5 ]
+"212
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
+"274
+[v _PORTC PORTC `VEuc  1 e 1 @7 ]
+"1400
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+"1462
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+"1524
+[v _TRISC TRISC `VEuc  1 e 1 @135 ]
+[s S22 . 5 `*.39VEuc 1 PORT 2 0 `uc 1 RS 1 2 :3:0 
+`uc 1 EN 1 2 :3:3 
+`uc 1 D4 1 3 :3:0 
+`uc 1 D5 1 3 :3:3 
+`uc 1 D6 1 4 :3:0 
+`uc 1 D7 1 4 :3:3 
+]
+"14 C:\Users\juang\MPLABXProject\Microprocesadores\Practica6.X\lcd.c
+[v _lcd lcd `S22  1 e 5 0 ]
+"34 C:\Users\juang\MPLABXProject\Microprocesadores\Practica6.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"45
+[v main@c c `uc  1 a 1 8 ]
+"35
+[v main@screen screen `S22  1 a 5 3 ]
+"34
+[v main@F1767 F1767 `S22  1 s 5 F1767 ]
+"51
+} 0
+"142 C:\Users\juang\MPLABXProject\Microprocesadores\Practica6.X\lcd.c
+[v _LCD_putrs LCD_putrs `(v  1 e 1 0 ]
+{
+"144
+[v LCD_putrs@i i `i  1 a 2 7 ]
+"142
+[v LCD_putrs@a a `*.24DCuc  1 p 1 6 ]
+"148
+} 0
+"117
+[v _LCD_putc LCD_putc `(v  1 e 1 0 ]
+{
+[v LCD_putc@c c `uc  1 p 1 wreg ]
+[v LCD_putc@c c `uc  1 p 1 wreg ]
+"119
+[v LCD_putc@c c `uc  1 p 1 5 ]
+"132
+} 1
+"59
+[v _LCD_Init LCD_Init `(a  1 e 1 0 ]
+{
+"110
+[v LCD_Init@cmd cmd `uc  1 a 1 13 ]
+[s S22 . 5 `*.39VEuc 1 PORT 2 0 `uc 1 RS 1 2 :3:0 
+`uc 1 EN 1 2 :3:3 
+`uc 1 D4 1 3 :3:0 
+`uc 1 D5 1 3 :3:3 
+`uc 1 D6 1 4 :3:0 
+`uc 1 D7 1 4 :3:3 
+]
+"59
+[v LCD_Init@display display `S22  1 p 5 6 ]
+"115
+} 0
+"48
+[v _LCD_Write LCD_Write `(v  1 e 1 0 ]
+{
+[v LCD_Write@c c `uc  1 p 1 wreg ]
+[v LCD_Write@c c `uc  1 p 1 wreg ]
+"50
+[v LCD_Write@c c `uc  1 p 1 5 ]
+"57
+} 1
+"16
+[v _LCD_Out LCD_Out `(v  1 e 1 0 ]
+{
+[v LCD_Out@c c `uc  1 p 1 wreg ]
+[v LCD_Out@c c `uc  1 p 1 wreg ]
+"18
+[v LCD_Out@c c `uc  1 p 1 2 ]
+"46
+} 1
