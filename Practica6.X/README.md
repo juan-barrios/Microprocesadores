@@ -10,7 +10,7 @@ Diseñar, programar e implementar el control de un display LCD de 18x2 utilizand
 ---
 
 ## Materiales Utilizados
-* Display LCD de 18x2
+* Display LCD de 16x2
 * Microcontrolador PIC16F887
 * 2 Botones (Pulsadores)
 * Protoboard
@@ -31,12 +31,13 @@ Se diseñaron dos caracteres especiales personalizados guardados en la memoria d
 * **Estado de Interrupción:** Al presionar el botón externo, el programa atendía la interrupción, borrando el mensaje anterior y mostrando en la primera fila la palabra "Verano". En la segunda fila se mostró "MLBB" junto con un carácter especial correspondiente al logo de Mobile Legends.
 
 A continuación, se presenta la tabla de control visual para la inserción de evidencias:
+<img width="3072" height="4096" alt="IMG_20260610_165214" src="https://github.com/user-attachments/assets/b32364ef-cb10-4d2a-b033-5cbc828fea4b" />
+
 
 | Actividad / Estado | Descripción del Comportamiento | Evidencia de Funcionamiento |
 | :--- | :--- | :--- |
-| **Actividad en Clase** | Fila 1: Mensaje fijo. Fila 2: Letras A-Q en aparición secuencial cíclica. | `[Insertar imagen o GIF aquí]` |
-| **Actividad 1 (Predeterminado)** | Fila 1: "Microprocesadores". Fila 2: "[Logo YouTube] Youtube". | `[Insertar imagen o GIF aquí]` |
-| **Actividad 1 (Interrupción)** | Fila 1: "Verano". Fila 2: "[Logo ML] MLBB" (Activado mediante botón). | `[Insertar imagen o GIF aquí]` |
+| **Actividad en Clase** | Fila 1: Mensaje fijo. Fila 2: Letras A-Q en aparición secuencial cíclica. |<img width="572" height="1017" alt="VID_20260610_165257 (1)" src="https://github.com/user-attachments/assets/c606fd1b-345d-46a3-aa63-a30e883b8c3f" />|
+| **Actividad 1 Caracteres Especiales e Interrupciones Externas)** | Fila 1: "Microprocesadores". Fila 2: "[Logo YouTube] Youtube". |<img width="572" height="1017" alt="VID_20260610_165203 (1)" src="https://github.com/user-attachments/assets/46d75b54-0952-4673-afa1-5cbd6fc99791" />|
 
 ---
 
@@ -47,3 +48,6 @@ Juan:
 Esta fue la práctica más retadora hasta el momento, no debido a temas de programación, más bien, por el armado físico del circuito, debido a dificultades que tuvimos en donde no se mostrana correctamente el mensaje, a pesar de que la simulación fuera correcta. Algunos aprendizajes que pude obtener fue el factor de la resiliencia y el pensamiento crítico, ambos fueron claves para entender el problema y resolverlo.
 
 Erick:
+
+
+Esta práctica me demostró la gran diferencia que existe entre la teoría de una simulación y el comportamiento real de los componentes. El mayor reto no fue el código, sino diagnosticar y corregir los problemas en el armado físico para que el LCD inicializara y mostrara los datos correctamente. Superar esto me permitió entender a fondo la importancia de los tiempos de espera y las conexiones físicas en las pantallas.
