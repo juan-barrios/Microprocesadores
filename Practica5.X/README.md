@@ -23,11 +23,11 @@ Implementar y comprender el manejo de interrupciones externas y la técnica de m
 
 El desarrollo de esta práctica se dividió en tres fases operativas, enfocadas en dominar la multiplexación y el control del flujo del programa mediante interrupciones de hardware.
 
-### 1. Actividad de Clase 1: Contador Multiplexado (0-9999)
-Se programó un contador cíclico ascendente que recorre los valores del 0 al 9999. Al alcanzar el límite máximo, el sistema se reinicia a 0. Se implementó exitosamente la técnica de multiplexación, logrando la persistencia visual necesaria para que los cuatro dígitos parezcan estar encendidos simultáneamente sin parpadeos perceptibles.
+### 1. Actividad de Clase 1: Botones de segmentos
+Se programó un contador que contiene 3 segmentos sin encender, estos se encienden al presionar uno de 3 botones, esto con el objetivo de aprender a asignar encendido a una interacción externa.
 
-### 2. Actividad de Clase 2: Rutina de Interrupción por Tiempo
-Se configuró un botón externo para generar una interrupción en el sistema. Al pulsar el botón, el conteo principal del display se detiene inmediatamente y el microcontrolador pasa a ejecutar una rutina de 4 segundos. Durante este periodo, un LED externo parpadea exactamente 4 veces (una vez por cada segundo transcurrido) antes de reanudar la operación normal del display.
+### 2. Actividad de Clase 2: Contador con 3 botones
+Se configuraron 3 botones diferentes para cumplir funciones, es un contador que al presionar el boton 1, hace incrementos de 1, si se presiona el boton 2 se hacen decrementos de 1 y si se presiona el boton 3, este funciona como un multiplicador de 2 para incrementar o disminuir de 2 en 2.
 
 ### 3. Actividad 1: Control de Dirección de Conteo
 Se modificó el sistema del contador (0-9999) para responder de forma dinámica a las interrupciones externas. El contador inicia su secuencia de manera ascendente; sin embargo, cada vez que se pulsa el botón externo, se genera una interrupción que invierte la dirección lógica del conteo (cambiando de ascendente a descendente, y viceversa).
@@ -36,10 +36,11 @@ Se modificó el sistema del contador (0-9999) para responder de forma dinámica 
 
 | Actividad / Módulo | Descripción del Comportamiento | Evidencia Visual (Físico / Proteus) |
 | :--- | :--- | :--- |
-| **Contador Cíclico** | Conteo de 0 a 9999 con multiplexación estable en display de 4 dígitos. | `[Insertar imagen/video de Actividad de Clase 1 aquí]` |
-| **Interrupción de 4s** | Detención de conteo y parpadeo secuencial de LED externo. | `[Insertar imagen/video de Actividad de Clase 2 aquí]` |
-| **Control de Dirección** | Inversión del flujo del contador mediante la pulsación del botón. | `[Insertar imagen/video de Actividad 1 aquí]` |
-| **Diagrama General** | Esquema de conexiones en Proteus. | `[Insertar imagen del diagrama esquemático aquí]` |
+| **Botones de segmentos** | Conteo de 0 a 9999 con multiplexación estable en display de 4 dígitos. |<img width="475" height="844" alt="VID_20260608_161150+(1) (1)" src="https://github.com/user-attachments/assets/588eeb07-c008-46ba-988d-ed0e75a748ee" />|
+| **Contador con 3 botones** | Detención de conteo y parpadeo secuencial de LED externo. |<img width="259" height="460" alt="VID_20260608_160820+(1) (1)" src="https://github.com/user-attachments/assets/c5f1fd0a-7c3d-4d23-8efe-c1424b52492c" />
+|
+| **Control de Dirección** | Inversión del flujo del contador mediante la pulsación del botón. | <img width="595" height="335" alt="VID_20260609_163925 (1)" src="https://github.com/user-attachments/assets/244360d7-b689-4786-af28-c1bd83b85080" />|
+| **Diagrama General** | Esquema de conexiones en Proteus. | <img width="1158" height="477" alt="image" src="https://github.com/user-attachments/assets/ebe2af6a-081b-43a6-a77f-493872bda80d" />|
 
 ---
 
@@ -50,3 +51,5 @@ Se modificó el sistema del contador (0-9999) para responder de forma dinámica 
 Esta fue, sin duda, una de las actividades más retadoras entre lo que llevamos realizado durante la materia, debido a que es una integración de todos los temas, desde el uso de puertos, hasta multiplexación. Por lo mismo, me sirvió bastante para poder aprender sobre técnicas como el uso de interrupciones, a manera de 'condicionales', lo que nos será muy útil para proyectos futuros.
 
 **Erick:**
+
+Esta práctica me sirvió para entender la diferencia fundamental entre el código secuencial y las interrupciones por hardware. Al trabajar con el PIC16F887, comprendí cómo una interrupción externa puede pausar instantáneamente el programa principal para atender un evento crítico —como cambiar el sentido del conteo o activar la rutina del LED— sin perder el control de las variables. Fue un gran reto combinar esto con la multiplexación del display de 4 dígitos, ya que me obligó a ser muy preciso con la gestión de tiempos para que el cambio de funciones no afectara la visualización en la protoboard.
