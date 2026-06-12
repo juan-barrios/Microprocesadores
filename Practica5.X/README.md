@@ -33,12 +33,12 @@ Se configuraron 3 botones diferentes para cumplir funciones, es un contador que 
 Se modificó el sistema del contador (0-9999) para responder de forma dinámica a las interrupciones externas. El contador inicia su secuencia de manera ascendente; sin embargo, cada vez que se pulsa el botón externo, se genera una interrupción que invierte la dirección lógica del conteo (cambiando de ascendente a descendente, y viceversa).
 
 ### Evidencia Fotográfica / Diagramas
+<img width="3072" height="4096" alt="IMG_20260608_161227" src="https://github.com/user-attachments/assets/e3ea76a3-72b4-4b08-b627-4e273d900cca" />
 
 | Actividad / Módulo | Descripción del Comportamiento | Evidencia Visual (Físico / Proteus) |
 | :--- | :--- | :--- |
 | **Botones de segmentos** | Conteo de 0 a 9999 con multiplexación estable en display de 4 dígitos. |<img width="475" height="844" alt="VID_20260608_161150+(1) (1)" src="https://github.com/user-attachments/assets/588eeb07-c008-46ba-988d-ed0e75a748ee" />|
-| **Contador con 3 botones** | Detención de conteo y parpadeo secuencial de LED externo. |<img width="259" height="460" alt="VID_20260608_160820+(1) (1)" src="https://github.com/user-attachments/assets/c5f1fd0a-7c3d-4d23-8efe-c1424b52492c" />
-|
+| **Contador con 3 botones** | Detención de conteo y parpadeo secuencial de LED externo. |<img width="259" height="460" alt="VID_20260608_160820+(1) (1)" src="https://github.com/user-attachments/assets/c5f1fd0a-7c3d-4d23-8efe-c1424b52492c" />|
 | **Control de Dirección** | Inversión del flujo del contador mediante la pulsación del botón. | <img width="595" height="335" alt="VID_20260609_163925 (1)" src="https://github.com/user-attachments/assets/244360d7-b689-4786-af28-c1bd83b85080" />|
 | **Diagrama General** | Esquema de conexiones en Proteus. | <img width="1158" height="477" alt="image" src="https://github.com/user-attachments/assets/ebe2af6a-081b-43a6-a77f-493872bda80d" />|
 
