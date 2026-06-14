@@ -10,7 +10,7 @@ Comprender e implementar el uso del convertidor analógico a digital (ADC) del m
 ---
 
 ## Materiales Utilizados
-* Display LCD de 18x2
+* Display LCD de 16x2
 * Microcontrolador PIC16F887
 * Protoboard
 * Fuente de alimentación de 5V
@@ -38,13 +38,11 @@ A continuación se presentan las evidencias visuales y los diagramas de funciona
 
 | Simulación (Actividad de Clase) | Armado Físico (Actividad 1) |
 | :---: | :---: |
-| <img width="500" alt="[Insertar imagen de simulación aquí]" src="[Insertar enlace de imagen aquí]" /> | <img width="500" alt="[Insertar imagen del armado aquí]" src="[Insertar enlace de imagen aquí]" /> |
+|<img width="1617" height="742" alt="image" src="https://github.com/user-attachments/assets/a4363f96-eb2f-4468-b4cf-b83e4d04feda" />|<img width="3072" height="4096" alt="IMG_20260611_174036" src="https://github.com/user-attachments/assets/47c8d061-a401-49ef-b2d8-cc35bd4af730" />|
 
 | Pantalla LCD | Descripción del Estado Visual | Evidencia de Funcionamiento |
 | :--- | :--- | :---: |
-| **Pantalla 1 (Voltaje)** | Muestra el voltaje exacto calculado en base a la entrada analógica. | <img width="250" alt="[Insertar imagen Pantalla 1]" src="[Insertar enlace aquí]" /> |
-| **Pantalla 2 (Porcentaje)** | Muestra la representación porcentual del voltaje máximo de 5V. | <img width="250" alt="[Insertar imagen Pantalla 2]" src="[Insertar enlace aquí]" /> |
-| **Pantalla 3 (ADC)** | Muestra el valor numérico en binario/decimal (0-1023) detectado por el convertidor. | <img width="250" alt="[Insertar imagen Pantalla 3]" src="[Insertar enlace aquí]" /> |
+| **Monitoreo General (Voltaje, Porcentaje y ADC)** | Muestra de forma integrada o secuencial el valor numérico detectado por el convertidor (0-1023), su equivalencia en voltaje (0-5V) y la representación porcentual del valor máximo. |<img width="556" height="313" alt="VID_20260611_173642 (1)" src="https://github.com/user-attachments/assets/1d902a39-9565-48a0-9cbb-6efa277c9db8" />|
 
 ---
 
@@ -56,4 +54,6 @@ Durante esta práctica pude entender de mucho mejor forma cómo emplear los disp
 
 
 Erick:
+
+Esta práctica me permitió entender cómo los microcontroladores interpretan variables del mundo real a través del módulo ADC. Al trabajar con el PIC16F887, aprendí a transformar una lectura binaria cruda (de 0 a 1023) en datos comprensibles para el usuario, realizando las operaciones matemáticas necesarias para mostrar el voltaje exacto y su porcentaje equivalente. Además, aplicar las interrupciones externas para crear el sistema de navegación entre menús me ayudó a comprender cómo diseñar instrumentos de medición que sean ordenados, eficientes y fáciles de usar.
 
