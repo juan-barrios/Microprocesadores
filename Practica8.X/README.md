@@ -10,7 +10,7 @@ Diseñar e implementar un sistema de adquisición de datos para múltiples canal
 ---
 
 ## Materiales Utilizados
-* Display LCD de 18x2
+* Display LCD de 16x2
 * Microcontrolador PIC16F887
 * Protoboard
 * Fuente de alimentación de 5V
@@ -36,13 +36,11 @@ A continuación se presentan las evidencias y la estructura de las interfaces lo
 
 | Simulación (Actividad de Clase) | Armado Físico (Actividad 1) |
 | :---: | :---: |
-| <img width="500" alt="[Insertar imagen de simulación mostrando V1 y V2]" src="[Insertar enlace de imagen aquí]" /> | <img width="500" alt="[Insertar imagen del circuito físico]" src="[Insertar enlace de imagen aquí]" /> |
+|<img width="1110" height="501" alt="image" src="https://github.com/user-attachments/assets/f7a8bc5e-90a7-4851-b550-2d6efd15aedd" />|<img width="3072" height="4096" alt="IMG_20260612_160455" src="https://github.com/user-attachments/assets/bc302780-781e-4792-8143-81a37f704c2f" />|
 
 | Interfaz de Visualización | Descripción de la Pantalla | Evidencia (RA0 / RA1) |
 | :--- | :--- | :---: |
-| **Pantalla 1 (Voltaje)** | Muestra el voltaje calculado de la entrada seleccionada. | <img width="250" alt="[Insertar imagen]" src="[Insertar enlace aquí]" /> |
-| **Pantalla 2 (Porcentaje)** | Muestra el nivel de voltaje como porcentaje (respecto a 5V). | <img width="250" alt="[Insertar imagen]" src="[Insertar enlace aquí]" /> |
-| **Pantalla 3 (Valor ADC)** | Muestra el valor de conversión digital (0 a 1023). | <img width="250" alt="[Insertar imagen]" src="[Insertar enlace aquí]" /> |
+| **Monitoreo Completo (Voltaje, Porcentaje y ADC)** | Muestra de forma integrada o secuencial el voltaje calculado, su representación en porcentaje (0-100%) y el valor de la conversión digital (0-1023) para la entrada analógica seleccionada (RA0 o RA1). |<img width="237" height="421" alt="VID_20260612_160425 (1)" src="https://github.com/user-attachments/assets/ed719ec5-17bd-4b28-b872-66c1ac031f01" />|
 
 ---
 
@@ -54,3 +52,4 @@ Durante esta práctica pude afianzar los conocimientos que la actividad #6 y #7 
 
 Erick:
 
+Esta práctica fue clave para comprender cómo el microcontrolador puede gestionar múltiples señales del mundo real utilizando un solo módulo ADC. Al trabajar con el PIC16F887, aprendí la importancia de cambiar correctamente el canal de lectura en los registros internos (conmutando entre RA0 y RA1) y dar el tiempo necesario para que el capacitor de muestreo se estabilice.
