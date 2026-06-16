@@ -10,7 +10,7 @@ Los proyectos están orientados al uso del **PIC16F887**, desarrollados con **MP
 <!-- Esta tabla se genera automáticamente con scripts/update_main_readme.py. -->
 **Total de prácticas documentadas:** 8
 
-| Práctica | Resumen | Temas detectados |
+| Práctica | Resumen | Temas |
 |---|---|---|
 | [Práctica #2 - MATRIZ LED 8X8](Practica2.X/README.md) | El objetivo principal de esta práctica es diseñar, programar e implementar el control de una matriz LED de 8x8 utilizando el microcontrolador PIC16F887. A tr... | PIC16F887, Proteus, Matriz LED, LED |
 | [Práctica #3 - DISPLAY 7 SEGMENTOS](Practica3.X/README.md) | Programar y comprender el funcionamiento de un display de 7 segmentos en configuración de cátodo común, utilizando el microcontrolador PIC16F887 para visuali... | PIC16F887, 7 segmentos, Display |
