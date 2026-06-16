@@ -22,25 +22,6 @@ Los proyectos están orientados al uso del **PIC16F887**, desarrollados con **MP
 | 8 | [Practica9.X](Practica9.X/README.md) | Microprocesadores PROYECTO PRIMER PARCIAL: VIDEOJUEGO CON JOYSTICK Práctica #9 | PIC16F887, Display, Matriz LED |
 <!-- AUTO-GENERATED-PRACTICES:END -->
 
-## Cómo agregar una nueva práctica
-
-1. Crea una carpeta para la práctica.
-2. Agrega un `README.md` local dentro de esa carpeta.
-3. Escribe un título con `#` y una descripción breve al inicio del README local.
-4. Sube los cambios al repositorio.
-
-El índice principal se actualiza automáticamente con GitHub Actions.
-
-## Estructura sugerida para cada práctica
-
-```text
-Practica-XX-Nombre/
-├── README.md
-├── src/
-├── proteus/
-└── docs/
-```
-
 ## Herramientas
 
 - Microcontrolador: PIC16F887
