@@ -1,0 +1,46 @@
+name: Update main README
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Runs every night at 03:00 Mexico/Central when the repo timezone is UTC-6.
+    # GitHub Actions cron uses UTC, so 09:00 UTC = 03:00 local UTC-6.
+    - cron: "0 9 * * *"
+  push:
+    branches:
+      - master
+    paths:
+      - "**/README.md"
+      - "scripts/update_main_readme.py"
+      - ".github/workflows/update-main-readme.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Generate main README
+        run: python scripts/update_main_readme.py
+
+      - name: Commit README changes
+        run: |
+          if [[ -n "$(git status --porcelain README.md)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add README.md
+            git commit -m "docs: update main README index"
+            git push
+          else
+            echo "README.md is already up to date."
+          fi
