@@ -30,6 +30,11 @@ IGNORED_DIRS = {
     "scripts",
 }
 
+SUBJECT_WORDS = (
+    "Microprocesadores",
+    "Microcrontoladores",  # typo present in an existing local README
+)
+
 KEYWORDS = [
     ("PIC16F887", "PIC16F887"),
     ("MPLAB", "MPLAB X"),
@@ -62,19 +67,100 @@ def strip_markdown(text: str) -> str:
     return normalize_spaces(text)
 
 
+def clean_description_text(text: str) -> str:
+    """Remove course label words from generated summaries."""
+    cleaned = text
+    for word in SUBJECT_WORDS:
+        cleaned = re.sub(rf"\b{re.escape(word)}\b", "", cleaned, flags=re.IGNORECASE)
+    return normalize_spaces(cleaned)
+
+
+def escape_table_cell(text: str) -> str:
+    return text.replace("|", "\\|")
+
+
 def humanize_folder_name(path: Path) -> str:
     name = path.parent.name.replace("_", " ").replace("-", " ")
     return normalize_spaces(name).title() or path.parent.as_posix()
 
 
 def extract_title(readme_path: Path, text: str) -> str:
+    h1_match = re.search(r"<h1[^>]*>(.*?)</h1>", text, flags=re.IGNORECASE | re.DOTALL)
+    if h1_match:
+        title = strip_markdown(h1_match.group(1))
+        if title:
+            return title
+
     for line in text.splitlines():
         match = re.match(r"^#\s+(.+)$", line.strip())
         if match:
             title = strip_markdown(match.group(1))
             if title:
                 return title
+
     return humanize_folder_name(readme_path)
+
+
+def first_number_match(pattern: str, source: str) -> int | None:
+    match = re.search(pattern, source, flags=re.IGNORECASE)
+    if not match:
+        return None
+
+    for group in match.groups():
+        if group and group.isdigit():
+            return int(group)
+    return None
+
+
+def extract_practice_number(readme_path: Path, text: str = "") -> int | None:
+    rel = readme_path.relative_to(ROOT).as_posix()
+    sources = [text, rel]
+    patterns = [
+        r"pr[aá]ctica\s*#?\s*(\d+)",
+        r"practica\s*#?\s*(\d+)",
+        r"pr[aá]ctica[ _.-]*(\d+)",
+        r"practica[ _.-]*(\d+)",
+        r"(?:^|/)(?:p|prac)[ _.-]*(\d+)",
+        r"(?:^|/)(\d+)(?:[^0-9]|$)",
+    ]
+
+    for source in sources:
+        for pattern in patterns:
+            number = first_number_match(pattern, source)
+            if number is not None:
+                return number
+    return None
+
+
+def format_practice_title(readme_path: Path, title: str, text: str) -> str:
+    number = extract_practice_number(readme_path, text)
+    title = clean_description_text(title)
+    title = re.sub(r"\bpr[aá]ctica\s*#?\s*\d+\b", "", title, flags=re.IGNORECASE)
+    title = re.sub(r"\bpractica\s*#?\s*\d+\b", "", title, flags=re.IGNORECASE)
+    title = normalize_spaces(title).upper()
+
+    if number is None:
+        return title
+    return f"Práctica #{number} - {title}"
+
+
+def should_skip_description_line(cleaned_line: str, title: str) -> bool:
+    if not cleaned_line:
+        return True
+
+    cleaned_lower = cleaned_line.lower()
+    title_lower = clean_description_text(title).lower()
+
+    if cleaned_lower == title_lower:
+        return True
+    if cleaned_lower in {word.lower() for word in SUBJECT_WORDS}:
+        return True
+    if re.fullmatch(r"pr[aá]ctica\s*#?\s*\d+", cleaned_lower, flags=re.IGNORECASE):
+        return True
+    if re.fullmatch(r"practica\s*#?\s*\d+", cleaned_lower, flags=re.IGNORECASE):
+        return True
+
+    return False
 
 
 def extract_description(text: str, title: str) -> str:
@@ -104,9 +190,11 @@ def extract_description(text: str, title: str) -> str:
         if re.match(r"^[-:| ]+$", line):
             continue
 
-        cleaned = strip_markdown(line)
-        if cleaned and cleaned.lower() != title.lower():
-            paragraph.append(cleaned)
+        cleaned = clean_description_text(strip_markdown(line))
+        if should_skip_description_line(cleaned, title):
+            continue
+
+        paragraph.append(cleaned)
 
     if not paragraph:
         return "README local de la práctica."
@@ -125,12 +213,8 @@ def extract_tags(text: str) -> str:
 
 
 def practice_sort_key(path: Path) -> tuple[int, str]:
-    rel = path.relative_to(ROOT).as_posix().lower()
-    number_match = re.search(r"(?:pr[aá]ctica|practica|prac|p)[ _.-]*(\d+)", rel)
-    if not number_match:
-        number_match = re.search(r"(^|/)(\d+)([^0-9]|$)", rel)
-    number = int(number_match.group(1 if number_match.lastindex == 1 else 2)) if number_match else 10_000
-    return number, rel
+    number = extract_practice_number(path)
+    return number if number is not None else 10_000, path.relative_to(ROOT).as_posix().lower()
 
 
 def iter_nested_readmes() -> list[Path]:
@@ -156,18 +240,22 @@ def build_generated_section() -> str:
         "<!-- Esta tabla se genera automáticamente con scripts/update_main_readme.py. -->",
         f"**Total de prácticas documentadas:** {len(readmes)}",
         "",
-        "| # | Práctica | Resumen | Temas detectados |",
-        "|---:|---|---|---|",
+        "| Práctica | Resumen | Temas detectados |",
+        "|---|---|---|",
     ]
 
-    for index, readme_path in enumerate(readmes, start=1):
+    for readme_path in readmes:
         text = readme_path.read_text(encoding="utf-8", errors="ignore")
         title = extract_title(readme_path, text)
+        practice_title = format_practice_title(readme_path, title, text)
         description = extract_description(text, title)
         tags = extract_tags(text)
         rel_path = readme_path.relative_to(ROOT).as_posix()
         link = quote(rel_path, safe="/#")
-        lines.append(f"| {index} | [{title}]({link}) | {description} | {tags} |")
+        lines.append(
+            f"| [{escape_table_cell(practice_title)}]({link}) | "
+            f"{escape_table_cell(description)} | {escape_table_cell(tags)} |"
+        )
 
     lines.append("")
     return "\n".join(lines)
