@@ -19,7 +19,7 @@ Los proyectos están orientados al uso del **PIC16F887**, desarrollados con **MP
 | [Práctica #6 - USO DE DISPLAYS LCD](Practica6.X/README.md) | Diseñar, programar e implementar el control de un display LCD de 18x2 utilizando el microcontrolador PIC16F887. A través de este proyecto, se busca dominar l... | PIC16F887, Display, Interrupciones |
 | [Práctica #7 - USO DE PUERTOS ANALÓGICOS](Practica7.X/README.md) | Comprender e implementar el uso del convertidor analógico a digital (ADC) del microcontrolador PIC16F887. Se busca medir el voltaje de entrada analógico medi... | PIC16F887, Display, ADC, Interrupciones |
 | [Práctica #8 - MÚLTIPLES ENTRADAS ANALÓGICAS](Practica8.X/README.md) | Diseñar e implementar un sistema de adquisición de datos para múltiples canales utilizando el convertidor analógico a digital (ADC) del microcontrolador PIC1... | PIC16F887, Display, ADC, Interrupciones |
-| [Práctica #9 - PROYECTO PRIMER PARCIAL: VIDEOJUEGO CON JOYSTICK](Practica9.X/README.md) | Diseñar e implementar un sistema interactivo tipo "videojuego" utilizando el microcontrolador PIC16F887 y un display LCD de 16x2. El proyecto tiene como prop... | PIC16F887, Display, Matriz LED |
+| [Práctica #29 - PROYECTO PRIMER PARCIAL: VIDEOJUEGO CON JOYSTICK](Practica9.X/README.md) | Proyecto #1 | PIC16F887, Display, Matriz LED |
 <!-- AUTO-GENERATED-PRACTICES:END -->
 
 ## Herramientas
