@@ -1,7 +1,7 @@
 <div align="center" style="background-color: #1e1e1e; padding: 20px; border-radius: 8px; border: 1px solid #333;">
   <kbd>Microprocesadores</kbd>
   <h1 style="color: #00ff66; font-family: monospace; margin-top: 10px;">PROYECTO PRIMER PARCIAL: VIDEOJUEGO CON JOYSTICK</h1>
-  <p style="color: #888; font-family: monospace;">Práctica #9</p>
+  <p style="color: #888; font-family: monospace;">Proyecto #1</p>
 </div>
 
 ## Objetivo Principal
@@ -32,13 +32,11 @@ A continuación, se presentan las evidencias del armado y el funcionamiento de l
 
 | Vista General del Proyecto | Armado del Circuito Físico |
 | :---: | :---: |
-| <img width="500" alt="[Insertar imagen panorámica del proyecto]" src="[Insertar enlace de imagen aquí]" /> | <img width="500" alt="[Insertar imagen detallada de conexiones]" src="[Insertar enlace de imagen aquí]" /> |
+|<img width="1147" height="507" alt="image" src="https://github.com/user-attachments/assets/b28f6442-641b-4f78-b26f-cb0df0f310fa" />| <img width="3072" height="4096" alt="IMG_20260615_165431" src="https://github.com/user-attachments/assets/029bc2c1-c3b3-49f8-a42f-fb22eac26b1b" />|
 
 | Mecánica del Juego | Descripción Funcional | Evidencia Visual (GIF/Video/Imagen) |
 | :--- | :--- | :---: |
-| **Movimiento y Velocidad** | El personaje se desplaza por la cuadrícula 16x2. La velocidad responde dinámicamente al voltaje del joystick. | <img width="250" alt="[Insertar evidencia de movimiento]" src="[Insertar enlace aquí]" /> |
-| **Transición de Pantalla** | El personaje cruza el borde lateral y aparece en el lado contrario de la misma fila. | <img width="250" alt="[Insertar evidencia de cruce]" src="[Insertar enlace aquí]" /> |
-| **Animación de Salto** | Al presionar el botón, el personaje cambia su diseño para simular la acción de salto. | <img width="250" alt="[Insertar evidencia de salto]" src="[Insertar enlace aquí]" /> |
+| **Control, Dinámica y Animación del Personaje** | Demostración del desplazamiento por la cuadrícula 16x2 con velocidad dinámica según el voltaje del joystick, el efecto de transición cíclica al cruzar los bordes laterales y la animación de salto al accionar el botón. |<img width="324" height="576" alt="VID_20260615_165435 (1)" src="https://github.com/user-attachments/assets/69f6201c-55f5-4e3b-8850-a72897ec1db1" />|
 
 ---
 
@@ -50,3 +48,4 @@ Durante este proyecto, pude poner en práctica todo lo que he aprendido desde el
 
 Erick:
 
+Este proyecto fue la oportunidad perfecta para aplicar los conceptos de microprocesadores en un entorno lógico mucho más complejo y creativo. Lo más retador fue traducir las lecturas analógicas del joystick no solo a una dirección, sino a una velocidad de desplazamiento variable que se sintiera fluida en la pantalla LCD.
