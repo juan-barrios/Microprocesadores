@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Update the main README.md from every nested README.md in the repo.
 
-The script scans the repository for README.md files inside practice folders and
-rebuilds only the block delimited by AUTO-GENERATED-PRACTICES markers.
+The script scans the repository for README.md files inside practice/project folders
+and rebuilds only the block delimited by AUTO-GENERATED-PRACTICES markers.
 """
 
 from __future__ import annotations
@@ -84,6 +84,12 @@ def humanize_folder_name(path: Path) -> str:
     return normalize_spaces(name).title() or path.parent.as_posix()
 
 
+def normalize_item_label(raw_label: str | None) -> str:
+    if raw_label and raw_label.lower().startswith(("proy", "project")):
+        return "Proyecto"
+    return "Práctica"
+
+
 def extract_title(readme_path: Path, text: str) -> str:
     h1_match = re.search(r"<h1[^>]*>(.*?)</h1>", text, flags=re.IGNORECASE | re.DOTALL)
     if h1_match:
@@ -101,47 +107,57 @@ def extract_title(readme_path: Path, text: str) -> str:
     return humanize_folder_name(readme_path)
 
 
-def first_number_match(pattern: str, source: str) -> int | None:
-    match = re.search(pattern, source, flags=re.IGNORECASE)
-    if not match:
-        return None
+def extract_item_metadata(readme_path: Path, text: str = "") -> tuple[str, int | None]:
+    """Return whether the README describes a Práctica or Proyecto and its number.
 
-    for group in match.groups():
-        if group and group.isdigit():
-            return int(group)
-    return None
-
-
-def extract_practice_number(readme_path: Path, text: str = "") -> int | None:
+    Only the README header and the folder path are scanned for numbers. This avoids
+    accidentally reading image dimensions, dates, or GitHub attachment IDs as the
+    activity/project number.
+    """
     rel = readme_path.relative_to(ROOT).as_posix()
-    sources = [text, rel]
-    patterns = [
-        r"pr[aá]ctica\s*#?\s*(\d+)",
-        r"practica\s*#?\s*(\d+)",
-        r"pr[aá]ctica[ _.-]*(\d+)",
-        r"practica[ _.-]*(\d+)",
-        r"(?:^|/)(?:p|prac)[ _.-]*(\d+)",
-        r"(?:^|/)(\d+)(?:[^0-9]|$)",
-    ]
+    header_text = "\n".join(text.splitlines()[:40])
 
-    for source in sources:
-        for pattern in patterns:
-            number = first_number_match(pattern, source)
-            if number is not None:
-                return number
-    return None
+    labeled_pattern = re.compile(
+        r"\b(pr[aá]ctica|practica|proyecto|project)\s*#?\s*(\d+)\b",
+        flags=re.IGNORECASE,
+    )
+
+    for source in (header_text, rel):
+        match = labeled_pattern.search(source)
+        if match:
+            label = normalize_item_label(match.group(1))
+            return label, int(match.group(2))
+
+    folder_pattern = re.compile(
+        r"(?:^|/)(pr[aá]ctica|practica|proyecto|project)[ _.-]*(\d+)",
+        flags=re.IGNORECASE,
+    )
+    match = folder_pattern.search(rel)
+    if match:
+        label = normalize_item_label(match.group(1))
+        return label, int(match.group(2))
+
+    title = extract_title(readme_path, text) if text else humanize_folder_name(readme_path)
+    label = "Proyecto" if re.search(r"\bproyecto\b", title, flags=re.IGNORECASE) else "Práctica"
+    number_match = re.search(r"(?:^|/)(\d+)(?:[^0-9]|$)", rel)
+    number = int(number_match.group(1)) if number_match else None
+    return label, number
 
 
-def format_practice_title(readme_path: Path, title: str, text: str) -> str:
-    number = extract_practice_number(readme_path, text)
+def format_item_title(readme_path: Path, title: str, text: str) -> str:
+    label, number = extract_item_metadata(readme_path, text)
     title = clean_description_text(title)
-    title = re.sub(r"\bpr[aá]ctica\s*#?\s*\d+\b", "", title, flags=re.IGNORECASE)
-    title = re.sub(r"\bpractica\s*#?\s*\d+\b", "", title, flags=re.IGNORECASE)
+    title = re.sub(
+        r"\b(pr[aá]ctica|practica|proyecto|project)\s*#?\s*\d+\b",
+        "",
+        title,
+        flags=re.IGNORECASE,
+    )
     title = normalize_spaces(title).upper()
 
     if number is None:
-        return title
-    return f"Práctica #{number} - {title}"
+        return f"{label} - {title}"
+    return f"{label} #{number} - {title}"
 
 
 def should_skip_description_line(cleaned_line: str, title: str) -> bool:
@@ -155,9 +171,11 @@ def should_skip_description_line(cleaned_line: str, title: str) -> bool:
         return True
     if cleaned_lower in {word.lower() for word in SUBJECT_WORDS}:
         return True
-    if re.fullmatch(r"pr[aá]ctica\s*#?\s*\d+", cleaned_lower, flags=re.IGNORECASE):
-        return True
-    if re.fullmatch(r"practica\s*#?\s*\d+", cleaned_lower, flags=re.IGNORECASE):
+    if re.fullmatch(
+        r"(pr[aá]ctica|practica|proyecto|project)\s*#?\s*\d+",
+        cleaned_lower,
+        flags=re.IGNORECASE,
+    ):
         return True
 
     return False
@@ -197,7 +215,7 @@ def extract_description(text: str, title: str) -> str:
         paragraph.append(cleaned)
 
     if not paragraph:
-        return "README local de la práctica."
+        return "README local del trabajo."
 
     description = normalize_spaces(" ".join(paragraph))
     return description[:157].rstrip() + "..." if len(description) > 160 else description
@@ -212,9 +230,10 @@ def extract_tags(text: str) -> str:
     return ", ".join(found[:5]) if found else "—"
 
 
-def practice_sort_key(path: Path) -> tuple[int, str]:
-    number = extract_practice_number(path)
-    return number if number is not None else 10_000, path.relative_to(ROOT).as_posix().lower()
+def item_sort_key(path: Path) -> tuple[int, int, str]:
+    label, number = extract_item_metadata(path)
+    type_order = 1 if label == "Proyecto" else 0
+    return type_order, number if number is not None else 10_000, path.relative_to(ROOT).as_posix().lower()
 
 
 def iter_nested_readmes() -> list[Path]:
@@ -227,33 +246,33 @@ def iter_nested_readmes() -> list[Path]:
         if parts & IGNORED_DIRS:
             continue
         readmes.append(path)
-    return sorted(readmes, key=practice_sort_key)
+    return sorted(readmes, key=item_sort_key)
 
 
 def build_generated_section() -> str:
     readmes = iter_nested_readmes()
     if not readmes:
-        return "\n_Aún no se encontraron README.md dentro de carpetas de prácticas._\n"
+        return "\n_Aún no se encontraron README.md dentro de carpetas de prácticas o proyectos._\n"
 
     lines = [
         "",
         "<!-- Esta tabla se genera automáticamente con scripts/update_main_readme.py. -->",
-        f"**Total de prácticas documentadas:** {len(readmes)}",
+        f"**Total de trabajos documentados:** {len(readmes)}",
         "",
-        "| Práctica | Resumen | Temas detectados |",
+        "| Trabajo | Resumen | Temas detectados |",
         "|---|---|---|",
     ]
 
     for readme_path in readmes:
         text = readme_path.read_text(encoding="utf-8", errors="ignore")
         title = extract_title(readme_path, text)
-        practice_title = format_practice_title(readme_path, title, text)
+        item_title = format_item_title(readme_path, title, text)
         description = extract_description(text, title)
         tags = extract_tags(text)
         rel_path = readme_path.relative_to(ROOT).as_posix()
         link = quote(rel_path, safe="/#")
         lines.append(
-            f"| [{escape_table_cell(practice_title)}]({link}) | "
+            f"| [{escape_table_cell(item_title)}]({link}) | "
             f"{escape_table_cell(description)} | {escape_table_cell(tags)} |"
         )
 
@@ -264,25 +283,26 @@ def build_generated_section() -> str:
 def default_readme() -> str:
     return f"""# Microprocesadores
 
-Repositorio de prácticas de la materia **Microprocesadores**.
+Repositorio de prácticas y proyectos de la materia **Microprocesadores**.
 
 Los proyectos están orientados al uso del **PIC16F887**, desarrollados con **MPLAB X IDE / XC8** y simulados en **Proteus** cuando aplica.
 
-## Índice de prácticas
+## Índice de prácticas y proyectos
 
 {START_MARKER}
 {END_MARKER}
 
-## Cómo agregar una nueva práctica
+## Cómo agregar una nueva práctica o proyecto
 
-1. Crea una carpeta para la práctica.
+1. Crea una carpeta para el trabajo.
 2. Agrega un `README.md` local dentro de esa carpeta.
-3. Escribe un título con `#` y una descripción breve al inicio del README local.
-4. Sube los cambios al repositorio.
+3. Escribe un título con `#` o `<h1>` y una descripción breve al inicio del README local.
+4. Indica `Práctica #N` o `Proyecto #N` en el encabezado o en el nombre de la carpeta.
+5. Sube los cambios al repositorio.
 
 El índice principal se actualiza automáticamente con GitHub Actions.
 
-## Estructura sugerida para cada práctica
+## Estructura sugerida para cada trabajo
 
 ```text
 Practica-XX-Nombre/
@@ -306,7 +326,13 @@ def update_main_readme() -> bool:
     generated = build_generated_section()
 
     if START_MARKER not in current or END_MARKER not in current:
-        current = current.rstrip() + f"\n\n## Índice de prácticas\n\n{START_MARKER}\n{END_MARKER}\n"
+        current = current.rstrip() + f"\n\n## Índice de prácticas y proyectos\n\n{START_MARKER}\n{END_MARKER}\n"
+
+    current = current.replace("## Índice de prácticas\n", "## Índice de prácticas y proyectos\n")
+    current = current.replace(
+        "Repositorio de prácticas de la materia **Microprocesadores**.",
+        "Repositorio de prácticas y proyectos de la materia **Microprocesadores**.",
+    )
 
     pattern = re.compile(
         re.escape(START_MARKER) + r".*?" + re.escape(END_MARKER),
