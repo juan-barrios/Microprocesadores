@@ -36,12 +36,12 @@ A continuación, se presentan las evidencias del diseño y funcionamiento del ci
 
 | Simulación del Sistema | Armado Físico (Actividad 1) |
 | :---: | :---: |
-| <img width="500" alt="[Insertar imagen de simulación del reloj y ADC]" src="[Insertar enlace de imagen aquí]" /> | <img width="500" alt="[Insertar imagen del armado físico en protoboard]" src="[Insertar enlace de imagen aquí]" /> |
+|<img width="1123" height="508" alt="image" src="https://github.com/user-attachments/assets/ca8c1a15-ec39-4902-960f-06819ec17448" />| <img width="3072" height="4096" alt="IMG_20260616_155010_1" src="https://github.com/user-attachments/assets/fc8a6669-e7b8-4b48-8b9e-775a2f5b5309" />|
 
 | Funcionalidad | Descripción del Estado Visual | Evidencia de Funcionamiento |
 | :--- | :--- | :---: |
-| **Reloj (Timer0)** | Contador en formato 12H ubicado en la esquina inferior derecha. Actualización fluida sin bloqueos. | <img width="250" alt="[Insertar imagen del reloj]" src="[Insertar enlace aquí]" /> |
-| **Lectura de Voltaje** | Medición analógica en la esquina superior izquierda, operando simultáneamente con el reloj. | <img width="250" alt="[Insertar imagen del voltaje]" src="[Insertar enlace aquí]" /> |
+| **Reloj (Timer0)** | Contador en formato 12H ubicado en la esquina inferior derecha. Actualización fluida sin bloqueos. |<img width="652" height="367" alt="VID_20260616_155133 (1)" src="https://github.com/user-attachments/assets/71e422b8-35cb-471d-afe7-3c450b681257" />|
+| **Lectura de Voltaje** | Medición analógica en la esquina superior izquierda, operando simultáneamente con el reloj. |<img width="367" height="652" alt="VID_20260616_155014 (1)" src="https://github.com/user-attachments/assets/d4b7955e-a548-4a96-bad5-6b6184cc301a" />|
 
 ---
 
@@ -53,3 +53,4 @@ Aprender a utilizar las herramientas internas que el PIC ya tiene para poder gen
 
 Erick:
 
+Esta práctica fue fundamental para entender el concepto de la programación no bloqueante y la verdadera multitarea por hardware. Al configurar el Timer0 en el PIC16F887, comprendí cómo delegar el conteo del tiempo a los periféricos internos en segundo plano, liberando al procesador principal de los retardos convencionales.
