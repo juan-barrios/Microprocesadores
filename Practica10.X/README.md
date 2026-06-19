@@ -36,12 +36,12 @@ A continuación, se presentan los espacios de evidencia correspondientes al func
 
 | Simulación del Sistema | Armado Físico (Actividad 1) |
 | :---: | :---: |
-| <img width="500" alt="[Insertar imagen de simulación en Proteus aquí]" src="[Insertar enlace de imagen aquí]" /> | <img width="500" alt="[Insertar imagen del circuito físico en protoboard]" src="[Insertar enlace de imagen aquí]" /> |
+| <img width="1090" height="503" alt="image" src="https://github.com/user-attachments/assets/b7ec6ec4-54d2-4e57-bb21-95aba791e2ee" />| <img width="3072" height="4096" alt="IMG_20260617_154620_4" src="https://github.com/user-attachments/assets/122c026e-f9f0-4c07-b6e0-7564a5a57174" />|
 
 | Funcionalidad Evaluada | Descripción del Comportamiento Visual | Evidencia de Funcionamiento |
 | :--- | :--- | :---: |
-| **Reloj de 12 Horas (Timer1)** | Conteo de tiempo preciso en la esquina inferior derecha, operando sin interrupciones visuales. | <img width="250" alt="[Insertar imagen del reloj]" src="[Insertar enlace aquí]" /> |
-| **Lectura Analógica en RB0** | Voltaje variable reflejado en tiempo real en la esquina superior izquierda de la pantalla. | <img width="250" alt="[Insertar imagen de lectura de voltaje]" src="[Insertar enlace aquí]" /> |
+| **Reloj de 12 Horas (Timer1)** | Conteo de tiempo preciso en la esquina inferior derecha, operando sin interrupciones visuales. |<img width="650" height="362" alt="VID_20260616_155133+(1) (1)" src="https://github.com/user-attachments/assets/58dec721-c39a-4097-8f25-ab9c178c5c66" />|
+| **Lectura Analógica en RB0** | Voltaje variable reflejado en tiempo real en la esquina superior izquierda de la pantalla. |<img width="518" height="288" alt="VID_20260617_161839+(1) (1)" src="https://github.com/user-attachments/assets/ef068188-1bcb-43f4-90ff-cae9ff8b3549" />|
 
 ---
 
@@ -53,3 +53,4 @@ Esta práctica fue retadora, aunque no por temas de código o de implementacione
 
 Erick:
 
+Esta práctica me permitió entender la importancia de saber interpretar la datasheet del fabricante para configurar periféricos avanzados. A diferencia del Timer0, trabajar con el Timer1 de 16 bits me exigió comprender una estructura de registros más compleja y habilitar las interrupciones periféricas (PEIE).
