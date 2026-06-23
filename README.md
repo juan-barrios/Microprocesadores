@@ -2,7 +2,7 @@
 
 Repositorio de prácticas y proyectos de la materia **Microprocesadores**.
 
-Los proyectos están orientados al uso del **PIC16F887**, desarrollados con **MPLAB X IDE / XC8** y simulados en **Proteus** cuando aplica.
+Los proyectos están orientados al uso del **PIC16F887**, desarrollados con **MPLAB X IDE / XC8** y simulados en **Proteus**.
 
 ## Índice de prácticas y proyectos
 
