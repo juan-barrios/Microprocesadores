@@ -34,12 +34,12 @@ A continuación, se presentan los espacios de evidencia visual para el sistema d
 
 | Visualización en Proteus / Simulación | Armado Físico en Protoboard |
 | :---: | :---: |
-| <img width="500" alt="[Insertar imagen de simulación del teclado y LCD]" src="[Insertar enlace de imagen aquí]" /> | <img width="500" alt="[Insertar imagen del circuito físico armado]" src="[Insertar enlace de imagen aquí]" /> |
+|<img width="997" height="708" alt="image" src="https://github.com/user-attachments/assets/fce2ceee-df5a-4c1c-826c-85c27930dc3a" />|<img width="3072" height="4096" alt="1782315317237" src="https://github.com/user-attachments/assets/5cf411e7-2ce4-4ad2-b6be-79f7f476e696" />|
 
 | Funcionalidad | Descripción del Comportamiento Visual | Evidencia de Funcionamiento |
 | :--- | :--- | :---: |
-| **Lectura de Caracteres** | Muestra en pantalla la tecla presionada de manera instantánea y precisa. | <img width="250" alt="[Insertar imagen de prueba de teclas]" src="[Insertar enlace aquí]" /> |
-| **Operación de Calculadora** | Visualización de la sintaxis ingresada (Ej. "5 * 3") y el resultado final numérico con decimales (Ej. "15.00"). | <img width="250" alt="[Insertar imagen de la calculadora operando]" src="[Insertar enlace aquí]" /> |
+| **Lectura de Caracteres** | Muestra en pantalla la tecla presionada de manera instantánea. |<img width="248" height="441" alt="VID_20260623_145316 (1)" src="https://github.com/user-attachments/assets/3bc720f1-3df9-406b-957a-c19592a35129" />|
+| **Operación de Calculadora** | Visualización de la sintaxis ingresada (Ej. "5 * 3") y el resultado final numérico con decimales (Ej. "15.00"). |<img width="248" height="441" alt="VID_20260623_144202 (1)" src="https://github.com/user-attachments/assets/8800e6ac-6984-4d57-827a-7902bc2cbcd0" />|
 
 ---
 
@@ -51,3 +51,4 @@ Aprender de manera autogestionada sobre el uso de componentes distintos a los vi
 
 Erick:
 
+Esta práctica me permitió entender a fondo la técnica de escaneo por multiplexación para la lectura de periféricos de entrada. Controlar el teclado matricial de 4x4 con el PIC16F887 me demostró cómo optimizar pines, usando solo 8 líneas de código para leer 16 botones diferentes.
