@@ -33,12 +33,12 @@ A continuación, se presentan las evidencias del funcionamiento de ambas modalid
 
 | Vista de Simulación del Pulso | Armado Físico del Circuito |
 | :---: | :---: |
-| <img width="500" alt="[Insertar imagen de simulación u osciloscopio aquí]" src="[Insertar enlace de imagen aquí]" /> | <img width="500" alt="[Insertar imagen del circuito físico con el servo]" src="[Insertar enlace de imagen aquí]" /> |
+| <img width="812" height="512" alt="image" src="https://github.com/user-attachments/assets/9c9396f9-e759-4ad8-8b1f-3fe75f830d86" />|<img width="4096" height="3072" alt="1782331768417" src="https://github.com/user-attachments/assets/f585b81e-4d65-480a-885e-2609f71fa9e4" />|
 
 | Modalidad de Control | Descripción del Comportamiento | Evidencia de Funcionamiento |
 | :--- | :--- | :---: |
-| **Barrido Automático (Clase)** | El servomotor gira de 0 a 180 grados y regresa automáticamente en un bucle continuo. | <img width="250" alt="[Insertar GIF/Video del servo moviéndose solo]" src="[Insertar enlace aquí]" /> |
-| **Control Manual (Actividad 1)** | El eje del servomotor responde en tiempo real a los giros del potenciómetro. | <img width="250" alt="[Insertar GIF/Video del usuario girando el potenciómetro]" src="[Insertar enlace aquí]" /> |
+| **Barrido Automático (Clase)** | El servomotor gira de 0 a 180 grados y regresa automáticamente en un bucle continuo. | <img width="410" height="729" alt="VID_20260623_160043 (1)" src="https://github.com/user-attachments/assets/dd67d7e2-6447-4ccc-a919-73feadc27dd4" />|
+| **Control Manual (Actividad 1)** | El eje del servomotor responde en tiempo real a los giros del potenciómetro. |<img width="768" height="432" alt="VID_20260623_155830 (1)" src="https://github.com/user-attachments/assets/5eb48d91-3346-4129-91ae-f6bf353d5ca0" />|
 
 ---
 
@@ -46,8 +46,8 @@ A continuación, se presentan las evidencias del funcionamiento de ambas modalid
 
 Juan:
 
-[Insertar detalle aquí sobre la comprensión del funcionamiento interno de un servomotor, los cálculos necesarios con el Timer1 para generar pulsos de 1ms a 2ms dentro de una ventana de 20ms, y el manejo de las interrupciones]
+
 
 Erick:
 
-[Insertar detalle aquí sobre la experiencia integrando la lectura analógica (ADC) con la modulación de tiempos del Timer1, así como los retos del armado físico, la alimentación de corriente para el servomotor y la estabilización del movimiento]
+Esta práctica me permitió entender a fondo la estructura de las señales de control para servomotores y la precisión que se requiere en su gestión. Al utilizar el Timer1 de 16 bits en el PIC16F887, aprendí a calcular y generar manualmente los pulsos en microsegundos necesarios para posicionar el motor entre 0° y 180°.
