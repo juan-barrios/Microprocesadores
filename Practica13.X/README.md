@@ -59,5 +59,6 @@ Juan:
 
 
 Erick:
+
 Esta práctica me permitió entender cómo manejar cargas inductivas y control de potencia con el PIC16F887. 
 En la primera fase, aprendí a usar el transistor BJT y el diodo flyback para proteger los pines del microcontrolador de los voltajes inversos del motor. Después, implementar el Puente H fue lo mas interesante.
