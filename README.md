@@ -8,7 +8,7 @@ Los proyectos están orientados al uso del **PIC16F887**, desarrollados con **MP
 
 <!-- AUTO-GENERATED-PRACTICES:START -->
 <!-- Esta tabla se genera automáticamente con scripts/update_main_readme.py. -->
-**Total de trabajos documentados:** 12
+**Total de trabajos documentados:** 13
 
 | Trabajo | Resumen | Temas detectados |
 |---|---|---|
@@ -23,6 +23,7 @@ Los proyectos están orientados al uso del **PIC16F887**, desarrollados con **MP
 | [Práctica #10 - INTERRUPCIONES INTERNAS (TIMER1)](Practica10.X/README.md) | Diseñar e implementar un sistema concurrente utilizando las interrupciones por hardware del microcontrolador PIC16F887, específicamente mediante el módulo **... | PIC16F887, Display, ADC, Timers, Interrupciones |
 | [Práctica #11 - MODULACIÓN DE BRILLO (TIMER1 Y TIMER2)](Practica11.X/README.md) | Implementar y comparar dos técnicas de modulación por ancho de pulsos (PWM) para el control de la intensidad luminosa de dos LEDs de manera independiente, ut... | PIC16F887, LED, PWM, Timers, Interrupciones |
 | [Práctica #12 - TECLADO MATRICIAL](Practica12.X/README.md) | Implementar la lectura y decodificación de un teclado matricial de 4x4 utilizando los puertos digitales del microcontrolador PIC16F887. Se busca dominar la t... | PIC16F887, Proteus, Display |
+| [Práctica #14 - CONTROL DE UN SERVOMOTOR](Practica14.X/README.md) | Controlar la posición angular de un servomotor estándar utilizando el microcontrolador PIC16F887. Se busca comprender y aplicar la generación de señales de c... | PIC16F887, ADC, Timers, Interrupciones |
 | [Proyecto #1 - PROYECTO PRIMER PARCIAL: VIDEOJUEGO CON JOYSTICK](Proyecto1.X/README.md) | Diseñar e implementar un sistema interactivo tipo "videojuego" utilizando el microcontrolador PIC16F887 y un display LCD de 16x2. El proyecto tiene como prop... | PIC16F887, Display, Matriz LED |
 <!-- AUTO-GENERATED-PRACTICES:END -->
 
