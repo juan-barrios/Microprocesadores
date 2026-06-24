@@ -34,12 +34,11 @@ A continuación, se presentan las tablas de evidencia correspondientes al montaj
 
 | Simulación del Sistema PWM | Armado Físico (Actividad 1) |
 | :---: | :---: |
-| <img width="500" alt="[Insertar imagen de simulación o lectura de osciloscopio virtual]" src="[Insertar enlace de imagen aquí]" /> | <img width="500" alt="[Insertar imagen del circuito en protoboard]" src="[Insertar enlace de imagen aquí]" /> |
+|<img width="1022" height="382" alt="image" src="https://github.com/user-attachments/assets/30ffea29-e7f8-49ce-9610-1fb9bd720568" />| <img width="3072" height="4096" alt="1782315317281" src="https://github.com/user-attachments/assets/7a32979f-486e-446a-bc42-4174f618cee3" />|
 
 | Funcionalidad | Descripción del Comportamiento Visual | Evidencia de Funcionamiento |
 | :--- | :--- | :---: |
-| **Control por Hardware (RA0)** | Variación suave del brillo del LED 1. Generación de señal estable gestionada por Timer2 y el módulo CCP. | <img width="250" alt="[Insertar imagen/GIF del LED 1]" src="[Insertar enlace aquí]" /> |
-| **Control por Software (RA1)** | Variación independiente del brillo del LED 2. Generación emulada por código mediante las interrupciones del Timer1. | <img width="250" alt="[Insertar imagen/GIF del LED 2]" src="[Insertar enlace aquí]" /> |
+| **Control de Brillo (Hardware RA0 / Software RA1)** | Demostración de la variación independiente y suave del brillo en ambos componentes: el LED 1 regulado por hardware (Timer2 y módulo CCP) y el LED 2 emulado por software a través de interrupciones de Timer1. |<img width="652" height="367" alt="VID_20260623_140831 (1)" src="https://github.com/user-attachments/assets/64c40358-8773-4d52-8c5b-7c89ae03c43b" />|
 
 ---
 
@@ -51,3 +50,4 @@ Esta fue una actividad bastante entretenida, porque tuvimos que emplear concepto
 
 Erick:
 
+Con este proyecto logré integrar con éxito conceptos de conversión analógica, temporizadores e interrupciones dinámicas para controlar potencia mediante el ancho de pulso. Lo más interesante fue programar dos canales independientes que tradujeran el voltaje de los potenciómetros para encender los leds
