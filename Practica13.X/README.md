@@ -46,9 +46,11 @@ A continuación, se presentan las tablas organizacionales para el registro de da
 | <img width="1171" height="448" alt="image" src="https://github.com/user-attachments/assets/7ad9fbf8-9822-4c5c-8d37-b4d17cec22df" />|<img width="3072" height="4096" alt="1782332638431" src="https://github.com/user-attachments/assets/0239b8d7-908a-4db8-a8e1-ee1c5dc2ae0b" />|
 
 | Actividad / Fase | Descripción del Estado de Control | Evidencia de Funcionamiento |
-| :--- | :--- | :--- | :--- |
-| **Actividad en Clase** | Control de velocidad mediante transistor BJT y potenciómetro. Sentido único.|<img width="324" height="576" alt="VID_20260623_171732 (1)" src="https://github.com/user-attachments/assets/9fdc8941-4461-4c47-9426-fce83618c4a4" />|
-| **Actividad #1 (Giro Horario y Antihorario)** | Velocidad regulada por potenciómetro. Sentido de giro directo e inverso al presionar el boton |<img width="324" height="576" alt="VID_20260623_172946 (1)" src="https://github.com/user-attachments/assets/44b7c016-65fc-46b8-ad80-689b4126e464" />|
+| :--- | :--- | :--- |
+| Actividad en Clase | Control de velocidad mediante transistor BJT y potenciómetro. Sentido único.|<img width="324" height="576" alt="VID_20260623_171732 (1)" src="https://github.com/user-attachments/assets/3a1d41ec-0eeb-48fc-937c-38283b968640" />|
+
+| Actividad #1 (Giro Horario y Antihorario)| Velocidad regulada por potenciómetro. Sentido de giro directo e inverso al presionar el boton |<img width="324" height="576" alt="VID_20260623_172946 (1)" src="https://github.com/user-attachments/assets/45d36a7d-80c1-472a-8745-acc8b8512908" />|
+
 ---
 
 ## Conclusiones
