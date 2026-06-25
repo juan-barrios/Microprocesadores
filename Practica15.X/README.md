@@ -41,4 +41,5 @@ Con esta práctica aprendí a implementar la comunicación serial asíncrona ent
 
 **Juan:**
 
+Al ser la última práctica del curso, puedo decir que fue una de las más retadoras, puesto que involucraba conocimientos técnicos del PIC, además de requerir de un análisis de la hoja de datos del microprocesador para poder entender cómo programar la comunicación entre ambos dispositivos, sin embargo, fue una buena experiencia sobre cómo poder expandir aún más las funcionalidades del PIC.
 
