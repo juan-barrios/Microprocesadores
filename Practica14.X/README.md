@@ -46,7 +46,7 @@ A continuación, se presentan las evidencias del funcionamiento de ambas modalid
 
 Juan:
 
-
+Aprender más sobre las opciones que el PIC tiene para nosotros me da una perspectiva más amplia sobre posibles aplicaciones. Aunado a lo anterior, esta fue la primer ocasión que utilizaba un servomotor, lo que fue bastante interesante, sobre todo al momento de tener que realizar las conexiones en físico.
 
 Erick:
 
