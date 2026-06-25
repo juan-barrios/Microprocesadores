@@ -8,7 +8,7 @@ Los proyectos están orientados al uso del **PIC16F887**, desarrollados con **MP
 
 <!-- AUTO-GENERATED-PRACTICES:START -->
 <!-- Esta tabla se genera automáticamente con scripts/update_main_readme.py. -->
-**Total de trabajos documentados:** 14
+**Total de trabajos documentados:** 15
 
 | Trabajo | Resumen | Temas detectados |
 |---|---|---|
@@ -25,6 +25,7 @@ Los proyectos están orientados al uso del **PIC16F887**, desarrollados con **MP
 | [Práctica #12 - TECLADO MATRICIAL](Practica12.X/README.md) | Implementar la lectura y decodificación de un teclado matricial de 4x4 utilizando los puertos digitales del microcontrolador PIC16F887. Se busca dominar la t... | PIC16F887, Proteus, Display |
 | [Práctica #13 - CONTROL DE UN MOTOR DC](Practica13.X/README.md) | Diseñar, programar e implementar un sistema de control de velocidad y sentido de giro para un motor de corriente directa (DC) utilizando el microcontrolador... | PIC16F887, Proteus |
 | [Práctica #14 - CONTROL DE UN SERVOMOTOR](Practica14.X/README.md) | Controlar la posición angular de un servomotor estándar utilizando el microcontrolador PIC16F887. Se busca comprender y aplicar la generación de señales de c... | PIC16F887, ADC, Timers, Interrupciones |
+| [Práctica #15 - COMUNICACIÓN ENTRE](Practica15.X/README.md) | Establecer y comprender la comunicación bidireccional o unidireccional entre dos microcontroladores PIC16F887 utilizando sus módulos de transmisión y recepci... | PIC16F887, Proteus, LED |
 | [Proyecto #1 - PROYECTO PRIMER PARCIAL: VIDEOJUEGO CON JOYSTICK](Proyecto1.X/README.md) | Diseñar e implementar un sistema interactivo tipo "videojuego" utilizando el microcontrolador PIC16F887 y un display LCD de 16x2. El proyecto tiene como prop... | PIC16F887, Display, Matriz LED |
 <!-- AUTO-GENERATED-PRACTICES:END -->
 
