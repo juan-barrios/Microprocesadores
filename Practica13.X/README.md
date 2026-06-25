@@ -57,6 +57,7 @@ A continuación, se presentan las tablas organizacionales para el registro de da
 
 Juan:
 
+Esta práctica sin duda fue distinta a cualquiera que hemos realizado con anterioridad, lo que representó un reto. Me gustó poder aplicar conocimientos de electrónica y de otras materias a la clase de Microprocesadores, verdaderamente me hace darme cuenta sobre cómo todas las materias que llevamos en la carrera pueden tener conexiones entre sí.
 
 Erick:
 
