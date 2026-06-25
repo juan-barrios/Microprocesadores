@@ -27,16 +27,18 @@ Se realizó un programa estructurado donde se conectaron los puertos de transmis
 
 A continuación, se presenta la tabla para los diagramas y evidencias visuales de la conexión y el funcionamiento:
 
-| Descripción del Circuito | Diagrama de Conexión (Proteus) | Evidencia de Funcionamiento (Físico) |
-| :--- | :---: | :---: |
-| **Comunicación TX/RX con PIC16F887** | `[Insertar imagen del diagrama aquí]` | `[Insertar foto/video del armado aquí]` |
+| Descripción del Circuito | Diagrama de Conexión (Proteus)| Diagrama de conexión fisico | Evidencia de Funcionamiento (Físico) |
+| :--- | :---: | :---: | :---:|
+| **Comunicación TX/RX con PIC16F887** |<img width="617" height="716" alt="image" src="https://github.com/user-attachments/assets/783062fe-e781-4f16-b6e8-b5a04d0929f7" />|<img width="3072" height="4096" alt="1782359296472" src="https://github.com/user-attachments/assets/eb943d47-46ec-4759-bd39-1be975a84f17" />| <img width="864" height="486" alt="VID_20260624_154645 (1)" src="https://github.com/user-attachments/assets/5747922b-3a9c-4893-b9b2-df6767607993" />|
 
 ---
 
 ## Conclusiones
 
 **Erick:**
-[Insertar detalle aquí]
+
+Con esta práctica aprendí a implementar la comunicación serial asíncrona entre dos microcontroladores independientes. Lo más valioso fue configurar los registros del módulo EUSART para igualar la velocidad de transmisión (baudios) en ambos dispositivos.
 
 **Juan:**
-[Insertar detalle aquí]
+
+
