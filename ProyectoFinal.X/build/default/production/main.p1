@@ -1,0 +1,1847 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"126 main.c
+[; ;main.c: 126: State_t currentState = STATE_IDLE;
+[c E1768 0 1 2 3 4 5 6 .. ]
+[n E1768 . STATE_IDLE STATE_REQUEST_RECEIVED STATE_MOVING_UP STATE_MOVING_DOWN STATE_DOOR_OPENING STATE_DOOR_OPEN STATE_DOOR_CLOSING  ]
+"9 ./lcd.h
+[; ;./lcd.h: 9: typedef struct {
+[s S144 `*Vuc 1 :3 `uc 1 :3 `uc 1 :3 `uc 1 :3 `uc 1 :3 `uc 1 :3 `uc 1 ]
+[n S144 . PORT RS EN D4 D5 D6 D7 ]
+"274 C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 274: extern volatile unsigned char PORTC __attribute__((address(0x007)));
+[v _PORTC `Vuc ~T0 @X0 0 e@7 ]
+"170 main.c
+[; ;main.c: 170: void StateMachine_Update(Event_t event)
+[c E1777 0 1 2 .. ]
+[n E1777 . EVENT_NONE EVENT_FLOOR_REQUEST EVENT_TIMER_TICK  ]
+"163
+[; ;main.c: 163: void StateMachine_Goto(State_t nextState);
+[v _StateMachine_Goto `(v ~T0 @X0 0 ef1`E1768 ]
+"164
+[; ;main.c: 164: void StateMachine_StartNextRequest(void);
+[v _StateMachine_StartNextRequest `(v ~T0 @X0 0 ef ]
+"160
+[; ;main.c: 160: unsigned char HasAnyRequest(void);
+[v _HasAnyRequest `(uc ~T0 @X0 0 ef ]
+"3371 C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 3371: extern volatile unsigned char ANSEL __attribute__((address(0x188)));
+[v _ANSEL `Vuc ~T0 @X0 0 e@392 ]
+"3433
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 3433: extern volatile unsigned char ANSELH __attribute__((address(0x189)));
+[v _ANSELH `Vuc ~T0 @X0 0 e@393 ]
+"3048
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 3048: extern volatile unsigned char CM1CON0 __attribute__((address(0x107)));
+[v _CM1CON0 `Vuc ~T0 @X0 0 e@263 ]
+"3113
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 3113: extern volatile unsigned char CM2CON0 __attribute__((address(0x108)));
+[v _CM2CON0 `Vuc ~T0 @X0 0 e@264 ]
+"1524
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 1524: extern volatile unsigned char TRISC __attribute__((address(0x087)));
+[v _TRISC `Vuc ~T0 @X0 0 e@135 ]
+"212
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 212: extern volatile unsigned char PORTB __attribute__((address(0x006)));
+[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
+"1462
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 1462: extern volatile unsigned char TRISB __attribute__((address(0x086)));
+[v _TRISB `Vuc ~T0 @X0 0 e@134 ]
+"1336
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 1336:     struct {
+[s S54 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S54 . PS PSA T0SE T0CS INTEDG nRBPU ]
+"1344
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 1344:     struct {
+[s S55 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S55 . PS0 PS1 PS2 ]
+"1335
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 1335: typedef union {
+[u S53 `S54 1 `S55 1 ]
+[n S53 . . . ]
+"1350
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 1350: extern volatile OPTION_REGbits_t OPTION_REGbits __attribute__((address(0x081)));
+[v _OPTION_REGbits `VS53 ~T0 @X0 0 e@129 ]
+"2330
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 2330: extern volatile unsigned char WPUB __attribute__((address(0x095)));
+[v _WPUB `Vuc ~T0 @X0 0 e@149 ]
+"336
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 336: extern volatile unsigned char PORTD __attribute__((address(0x008)));
+[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
+"1586
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 1586: extern volatile unsigned char TRISD __attribute__((address(0x088)));
+[v _TRISD `Vuc ~T0 @X0 0 e@136 ]
+"75 ./lcd.h
+[; ;./lcd.h: 75: _Bool LCD_Init ( LCD display );
+[v _LCD_Init `(a ~T0 @X0 0 ef1`S144 ]
+"87
+[; ;./lcd.h: 87: void LCD_Write ( unsigned char c );
+[v _LCD_Write `(v ~T0 @X0 0 ef1`uc ]
+"93
+[; ;./lcd.h: 93: void LCD_Custom_Char(unsigned char loc, const unsigned char *bitmap);
+[v _LCD_Custom_Char `(v ~T0 @X0 0 ef2`uc`*Cuc ]
+"152 main.c
+[; ;main.c: 152: void Timer1_Init(void);
+[v _Timer1_Init `(v ~T0 @X0 0 ef ]
+"661 C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 661:     struct {
+[s S27 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S27 . TMR1ON TMR1CS nT1SYNC T1OSCEN T1CKPS TMR1GE T1GINV ]
+"670
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 670:     struct {
+[s S28 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S28 . . T1INSYNC . T1CKPS0 T1CKPS1 . T1GIV ]
+"679
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 679:     struct {
+[s S29 :2 `uc 1 :1 `uc 1 ]
+[n S29 . . T1SYNC ]
+"660
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 660: typedef union {
+[u S26 `S27 1 `S28 1 `S29 1 ]
+[n S26 . . . . ]
+"684
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 684: extern volatile T1CONbits_t T1CONbits __attribute__((address(0x010)));
+[v _T1CONbits `VS26 ~T0 @X0 0 e@16 ]
+"648
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 648: extern volatile unsigned char TMR1H __attribute__((address(0x00F)));
+[v _TMR1H `Vuc ~T0 @X0 0 e@15 ]
+"641
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 641: extern volatile unsigned char TMR1L __attribute__((address(0x00E)));
+[v _TMR1L `Vuc ~T0 @X0 0 e@14 ]
+"527
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 527:     struct {
+[s S23 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S23 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF ]
+"526
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 526: typedef union {
+[u S22 `S23 1 ]
+[n S22 . . ]
+"537
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 537: extern volatile PIR1bits_t PIR1bits __attribute__((address(0x00C)));
+[v _PIR1bits `VS22 ~T0 @X0 0 e@12 ]
+"1692
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 1692:     struct {
+[s S67 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S67 . TMR1IE TMR2IE CCP1IE SSPIE TXIE RCIE ADIE ]
+"1691
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 1691: typedef union {
+[u S66 `S67 1 ]
+[n S66 . . ]
+"1702
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 1702: extern volatile PIE1bits_t PIE1bits __attribute__((address(0x08C)));
+[v _PIE1bits `VS66 ~T0 @X0 0 e@140 ]
+"449
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 449:     struct {
+[s S20 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S20 . RBIF INTF T0IF RBIE INTE T0IE PEIE GIE ]
+"459
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 459:     struct {
+[s S21 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S21 . . TMR0IF . TMR0IE ]
+"448
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 448: typedef union {
+[u S19 `S20 1 `S21 1 ]
+[n S19 . . . ]
+"466
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 466: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
+[v _INTCONbits `VS19 ~T0 @X0 0 e@11 ]
+[v F164 `(v ~T0 @X0 1 tf1`ul ]
+"20 C:\Program Files\Microchip\xc8\v3.10\pic\include/builtins.h
+[v __delay `JF164 ~T0 @X0 0 e ]
+[p i __delay ]
+"159 main.c
+[; ;main.c: 159: void AddFloorRequest(unsigned char floor);
+[v _AddFloorRequest `(v ~T0 @X0 0 ef1`uc ]
+"84 ./lcd.h
+[; ;./lcd.h: 84: void LCD_putrs ( const char *a );
+[v _LCD_putrs `(v ~T0 @X0 0 ef1`*Cuc ]
+"78
+[; ;./lcd.h: 78: void LCD_putc ( char a );
+[v _LCD_putc `(v ~T0 @X0 0 ef1`uc ]
+[p mainexit ]
+[t ~ __interrupt . k ]
+[t T1 __interrupt ]
+"38 C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 38: __asm("INDF equ 00h");
+[; <" INDF equ 00h ;# ">
+"45
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 45: __asm("TMR0 equ 01h");
+[; <" TMR0 equ 01h ;# ">
+"52
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 52: __asm("PCL equ 02h");
+[; <" PCL equ 02h ;# ">
+"59
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 59: __asm("STATUS equ 03h");
+[; <" STATUS equ 03h ;# ">
+"145
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 145: __asm("FSR equ 04h");
+[; <" FSR equ 04h ;# ">
+"152
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 152: __asm("PORTA equ 05h");
+[; <" PORTA equ 05h ;# ">
+"214
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 214: __asm("PORTB equ 06h");
+[; <" PORTB equ 06h ;# ">
+"276
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 276: __asm("PORTC equ 07h");
+[; <" PORTC equ 07h ;# ">
+"338
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 338: __asm("PORTD equ 08h");
+[; <" PORTD equ 08h ;# ">
+"400
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 400: __asm("PORTE equ 09h");
+[; <" PORTE equ 09h ;# ">
+"438
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 438: __asm("PCLATH equ 0Ah");
+[; <" PCLATH equ 0Ah ;# ">
+"445
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 445: __asm("INTCON equ 0Bh");
+[; <" INTCON equ 0Bh ;# ">
+"523
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 523: __asm("PIR1 equ 0Ch");
+[; <" PIR1 equ 0Ch ;# ">
+"579
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 579: __asm("PIR2 equ 0Dh");
+[; <" PIR2 equ 0Dh ;# ">
+"636
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 636: __asm("TMR1 equ 0Eh");
+[; <" TMR1 equ 0Eh ;# ">
+"643
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 643: __asm("TMR1L equ 0Eh");
+[; <" TMR1L equ 0Eh ;# ">
+"650
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 650: __asm("TMR1H equ 0Fh");
+[; <" TMR1H equ 0Fh ;# ">
+"657
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 657: __asm("T1CON equ 010h");
+[; <" T1CON equ 010h ;# ">
+"751
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 751: __asm("TMR2 equ 011h");
+[; <" TMR2 equ 011h ;# ">
+"758
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 758: __asm("T2CON equ 012h");
+[; <" T2CON equ 012h ;# ">
+"829
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 829: __asm("SSPBUF equ 013h");
+[; <" SSPBUF equ 013h ;# ">
+"836
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 836: __asm("SSPCON equ 014h");
+[; <" SSPCON equ 014h ;# ">
+"906
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 906: __asm("CCPR1 equ 015h");
+[; <" CCPR1 equ 015h ;# ">
+"913
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 913: __asm("CCPR1L equ 015h");
+[; <" CCPR1L equ 015h ;# ">
+"920
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 920: __asm("CCPR1H equ 016h");
+[; <" CCPR1H equ 016h ;# ">
+"927
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 927: __asm("CCP1CON equ 017h");
+[; <" CCP1CON equ 017h ;# ">
+"1024
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 1024: __asm("RCSTA equ 018h");
+[; <" RCSTA equ 018h ;# ">
+"1119
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 1119: __asm("TXREG equ 019h");
+[; <" TXREG equ 019h ;# ">
+"1126
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 1126: __asm("RCREG equ 01Ah");
+[; <" RCREG equ 01Ah ;# ">
+"1133
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 1133: __asm("CCPR2 equ 01Bh");
+[; <" CCPR2 equ 01Bh ;# ">
+"1140
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 1140: __asm("CCPR2L equ 01Bh");
+[; <" CCPR2L equ 01Bh ;# ">
+"1147
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 1147: __asm("CCPR2H equ 01Ch");
+[; <" CCPR2H equ 01Ch ;# ">
+"1154
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 1154: __asm("CCP2CON equ 01Dh");
+[; <" CCP2CON equ 01Dh ;# ">
+"1224
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 1224: __asm("ADRESH equ 01Eh");
+[; <" ADRESH equ 01Eh ;# ">
+"1231
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 1231: __asm("ADCON0 equ 01Fh");
+[; <" ADCON0 equ 01Fh ;# ">
+"1332
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 1332: __asm("OPTION_REG equ 081h");
+[; <" OPTION_REG equ 081h ;# ">
+"1402
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 1402: __asm("TRISA equ 085h");
+[; <" TRISA equ 085h ;# ">
+"1464
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 1464: __asm("TRISB equ 086h");
+[; <" TRISB equ 086h ;# ">
+"1526
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 1526: __asm("TRISC equ 087h");
+[; <" TRISC equ 087h ;# ">
+"1588
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 1588: __asm("TRISD equ 088h");
+[; <" TRISD equ 088h ;# ">
+"1650
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 1650: __asm("TRISE equ 089h");
+[; <" TRISE equ 089h ;# ">
+"1688
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 1688: __asm("PIE1 equ 08Ch");
+[; <" PIE1 equ 08Ch ;# ">
+"1744
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 1744: __asm("PIE2 equ 08Dh");
+[; <" PIE2 equ 08Dh ;# ">
+"1801
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 1801: __asm("PCON equ 08Eh");
+[; <" PCON equ 08Eh ;# ">
+"1848
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 1848: __asm("OSCCON equ 08Fh");
+[; <" OSCCON equ 08Fh ;# ">
+"1913
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 1913: __asm("OSCTUNE equ 090h");
+[; <" OSCTUNE equ 090h ;# ">
+"1965
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 1965: __asm("SSPCON2 equ 091h");
+[; <" SSPCON2 equ 091h ;# ">
+"2027
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 2027: __asm("PR2 equ 092h");
+[; <" PR2 equ 092h ;# ">
+"2034
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 2034: __asm("SSPADD equ 093h");
+[; <" SSPADD equ 093h ;# ">
+"2041
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 2041: __asm("SSPMSK equ 093h");
+[; <" SSPMSK equ 093h ;# ">
+"2046
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 2046: __asm("MSK equ 093h");
+[; <" MSK equ 093h ;# ">
+"2163
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 2163: __asm("SSPSTAT equ 094h");
+[; <" SSPSTAT equ 094h ;# ">
+"2332
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 2332: __asm("WPUB equ 095h");
+[; <" WPUB equ 095h ;# ">
+"2402
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 2402: __asm("IOCB equ 096h");
+[; <" IOCB equ 096h ;# ">
+"2472
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 2472: __asm("VRCON equ 097h");
+[; <" VRCON equ 097h ;# ">
+"2542
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 2542: __asm("TXSTA equ 098h");
+[; <" TXSTA equ 098h ;# ">
+"2628
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 2628: __asm("SPBRG equ 099h");
+[; <" SPBRG equ 099h ;# ">
+"2690
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 2690: __asm("SPBRGH equ 09Ah");
+[; <" SPBRGH equ 09Ah ;# ">
+"2760
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 2760: __asm("PWM1CON equ 09Bh");
+[; <" PWM1CON equ 09Bh ;# ">
+"2830
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 2830: __asm("ECCPAS equ 09Ch");
+[; <" ECCPAS equ 09Ch ;# ">
+"2912
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 2912: __asm("PSTRCON equ 09Dh");
+[; <" PSTRCON equ 09Dh ;# ">
+"2956
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 2956: __asm("ADRESL equ 09Eh");
+[; <" ADRESL equ 09Eh ;# ">
+"2963
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 2963: __asm("ADCON1 equ 09Fh");
+[; <" ADCON1 equ 09Fh ;# ">
+"2997
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 2997: __asm("WDTCON equ 0105h");
+[; <" WDTCON equ 0105h ;# ">
+"3050
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 3050: __asm("CM1CON0 equ 0107h");
+[; <" CM1CON0 equ 0107h ;# ">
+"3115
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 3115: __asm("CM2CON0 equ 0108h");
+[; <" CM2CON0 equ 0108h ;# ">
+"3180
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 3180: __asm("CM2CON1 equ 0109h");
+[; <" CM2CON1 equ 0109h ;# ">
+"3231
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 3231: __asm("EEDATA equ 010Ch");
+[; <" EEDATA equ 010Ch ;# ">
+"3236
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 3236: __asm("EEDAT equ 010Ch");
+[; <" EEDAT equ 010Ch ;# ">
+"3243
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 3243: __asm("EEADR equ 010Dh");
+[; <" EEADR equ 010Dh ;# ">
+"3250
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 3250: __asm("EEDATH equ 010Eh");
+[; <" EEDATH equ 010Eh ;# ">
+"3257
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 3257: __asm("EEADRH equ 010Fh");
+[; <" EEADRH equ 010Fh ;# ">
+"3264
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 3264: __asm("SRCON equ 0185h");
+[; <" SRCON equ 0185h ;# ">
+"3321
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 3321: __asm("BAUDCTL equ 0187h");
+[; <" BAUDCTL equ 0187h ;# ">
+"3373
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 3373: __asm("ANSEL equ 0188h");
+[; <" ANSEL equ 0188h ;# ">
+"3435
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 3435: __asm("ANSELH equ 0189h");
+[; <" ANSELH equ 0189h ;# ">
+"3485
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 3485: __asm("EECON1 equ 018Ch");
+[; <" EECON1 equ 018Ch ;# ">
+"3530
+[; ;C:/Users/juang/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f887.h: 3530: __asm("EECON2 equ 018Dh");
+[; <" EECON2 equ 018Dh ;# ">
+"12 main.c
+[p x FOSC  =  HS         ]
+"13
+[p x WDTE  =  OFF        ]
+"14
+[p x PWRTE  =  OFF       ]
+"15
+[p x BOREN  =  ON        ]
+"16
+[p x LVP  =  OFF         ]
+"17
+[p x CPD  =  OFF         ]
+"18
+[p x WRT  =  OFF         ]
+"19
+[p x CP  =  OFF          ]
+"85
+[; ;main.c: 85: char upArrow[8] = {
+[v _upArrow `uc ~T0 @X0 -> 8 `i e ]
+[i _upArrow
+:U ..
+-> -> 4 `i `uc
+-> -> 14 `i `uc
+-> -> 31 `i `uc
+-> -> 4 `i `uc
+-> -> 4 `i `uc
+-> -> 4 `i `uc
+-> -> 4 `i `uc
+-> -> 0 `i `uc
+..
+]
+"96
+[; ;main.c: 96: char downArrow[8] = {
+[v _downArrow `uc ~T0 @X0 -> 8 `i e ]
+[i _downArrow
+:U ..
+-> -> 4 `i `uc
+-> -> 4 `i `uc
+-> -> 4 `i `uc
+-> -> 4 `i `uc
+-> -> 31 `i `uc
+-> -> 14 `i `uc
+-> -> 4 `i `uc
+-> -> 0 `i `uc
+..
+]
+"126
+[; ;main.c: 126: State_t currentState = STATE_IDLE;
+[v _currentState `E1768 ~T0 @X0 1 e ]
+[i _currentState
+. `E1768 0
+]
+"128
+[; ;main.c: 128: unsigned char currentFloor = 1;
+[v _currentFloor `uc ~T0 @X0 1 e ]
+[i _currentFloor
+-> -> 1 `i `uc
+]
+"129
+[; ;main.c: 129: unsigned char targetFloor = 1;
+[v _targetFloor `uc ~T0 @X0 1 e ]
+[i _targetFloor
+-> -> 1 `i `uc
+]
+"130
+[; ;main.c: 130: unsigned char requestedFloor = 1;
+[v _requestedFloor `uc ~T0 @X0 1 e ]
+[i _requestedFloor
+-> -> 1 `i `uc
+]
+"133
+[; ;main.c: 133: unsigned char floorRequests[6 + 1] = {0};
+[v _floorRequests `uc ~T0 @X0 -> 7 `i e ]
+[i _floorRequests
+:U ..
+-> -> 0 `i `uc
+..
+]
+"135
+[; ;main.c: 135: unsigned char stateTickCounter = 0;
+[v _stateTickCounter `uc ~T0 @X0 1 e ]
+[i _stateTickCounter
+-> -> 0 `i `uc
+]
+"136
+[; ;main.c: 136: unsigned char lcdNeedsUpdate = 1;
+[v _lcdNeedsUpdate `uc ~T0 @X0 1 e ]
+[i _lcdNeedsUpdate
+-> -> 1 `i `uc
+]
+"138
+[; ;main.c: 138: volatile unsigned char timerTicksPending = 0;
+[v _timerTicksPending `Vuc ~T0 @X0 1 e ]
+[i _timerTicksPending
+-> -> 0 `i `uc
+]
+"140
+[; ;main.c: 140: LCD screen = {&PORTC, 2, 3, 4, 5, 6, 7};
+[v _screen `S144 ~T0 @X0 1 e ]
+[i _screen
+:U ..
+:U ..
+&U _PORTC
+-> -> 2 `i `uc
+-> -> 3 `i `uc
+-> -> 4 `i `uc
+-> -> 5 `i `uc
+-> -> 6 `i `uc
+-> -> 7 `i `uc
+..
+..
+]
+[v F1792 `Cuc ~T0 @X0 -> 4 `i t ]
+"143
+[; ;main.c: 143: const char keypadMap[4][4] = {
+[v _keypadMap `F1792 ~T0 @X0 -> 4 `i e ]
+[i _keypadMap
+:U ..
+:U ..
+-> -> 49 `ui `uc
+-> -> 50 `ui `uc
+-> -> 51 `ui `uc
+-> -> 65 `ui `uc
+..
+:U ..
+-> -> 52 `ui `uc
+-> -> 53 `ui `uc
+-> -> 54 `ui `uc
+-> -> 66 `ui `uc
+..
+:U ..
+-> -> 55 `ui `uc
+-> -> 56 `ui `uc
+-> -> 57 `ui `uc
+-> -> 67 `ui `uc
+..
+:U ..
+-> -> 42 `ui `uc
+-> -> 48 `ui `uc
+-> -> 35 `ui `uc
+-> -> 68 `ui `uc
+..
+..
+]
+"170
+[; ;main.c: 170: void StateMachine_Update(Event_t event)
+[v _StateMachine_Update `(v ~T0 @X0 1 ef1`E1777 ]
+"171
+[; ;main.c: 171: {
+{
+[e :U _StateMachine_Update ]
+"170
+[; ;main.c: 170: void StateMachine_Update(Event_t event)
+[v _event `E1777 ~T0 @X0 1 r1 ]
+"171
+[; ;main.c: 171: {
+[f ]
+"172
+[; ;main.c: 172:     if(event == EVENT_TIMER_TICK)
+[e $ ! == -> _event `ui -> . `E1777 2 `ui 146  ]
+"173
+[; ;main.c: 173:     {
+{
+"174
+[; ;main.c: 174:         stateTickCounter++;
+[e ++ _stateTickCounter -> -> 1 `i `uc ]
+"175
+[; ;main.c: 175:     }
+}
+[e :U 146 ]
+"177
+[; ;main.c: 177:     switch(currentState)
+[e $U 148  ]
+"178
+[; ;main.c: 178:     {
+{
+"179
+[; ;main.c: 179:         case STATE_IDLE:
+[e :U 149 ]
+"180
+[; ;main.c: 180:             if(event == EVENT_FLOOR_REQUEST)
+[e $ ! == -> _event `ui -> . `E1777 1 `ui 150  ]
+"181
+[; ;main.c: 181:             {
+{
+"182
+[; ;main.c: 182:                 StateMachine_Goto(STATE_REQUEST_RECEIVED);
+[e ( _StateMachine_Goto (1 . `E1768 1 ]
+"183
+[; ;main.c: 183:                 StateMachine_StartNextRequest();
+[e ( _StateMachine_StartNextRequest ..  ]
+"184
+[; ;main.c: 184:             }
+}
+[e :U 150 ]
+"185
+[; ;main.c: 185:             break;
+[e $U 147  ]
+"187
+[; ;main.c: 187:         case STATE_REQUEST_RECEIVED:
+[e :U 151 ]
+"188
+[; ;main.c: 188:             StateMachine_StartNextRequest();
+[e ( _StateMachine_StartNextRequest ..  ]
+"189
+[; ;main.c: 189:             break;
+[e $U 147  ]
+"191
+[; ;main.c: 191:         case STATE_MOVING_UP:
+[e :U 152 ]
+"192
+[; ;main.c: 192:             if(event == EVENT_TIMER_TICK)
+[e $ ! == -> _event `ui -> . `E1777 2 `ui 153  ]
+"193
+[; ;main.c: 193:             {
+{
+"194
+[; ;main.c: 194:                 if(stateTickCounter >= 10)
+[e $ ! >= -> _stateTickCounter `i -> 10 `i 154  ]
+"195
+[; ;main.c: 195:                 {
+{
+"196
+[; ;main.c: 196:                     stateTickCounter = 0;
+[e = _stateTickCounter -> -> 0 `i `uc ]
+"197
+[; ;main.c: 197:                     currentFloor++;
+[e ++ _currentFloor -> -> 1 `i `uc ]
+"198
+[; ;main.c: 198:                     lcdNeedsUpdate = 1;
+[e = _lcdNeedsUpdate -> -> 1 `i `uc ]
+"200
+[; ;main.c: 200:                     if(currentFloor >= targetFloor || floorRequests[currentFloor])
+[e $ ! || >= -> _currentFloor `i -> _targetFloor `i != -> *U + &U _floorRequests * -> _currentFloor `ux -> -> # *U &U _floorRequests `ui `ux `i -> 0 `i 155  ]
+"201
+[; ;main.c: 201:                     {
+{
+"202
+[; ;main.c: 202:                         floorRequests[currentFloor] = 0;
+[e = *U + &U _floorRequests * -> _currentFloor `ux -> -> # *U &U _floorRequests `ui `ux -> -> 0 `i `uc ]
+"203
+[; ;main.c: 203:                         StateMachine_Goto(STATE_DOOR_OPENING);
+[e ( _StateMachine_Goto (1 . `E1768 4 ]
+"204
+[; ;main.c: 204:                     }
+}
+[e :U 155 ]
+"205
+[; ;main.c: 205:                 }
+}
+[e :U 154 ]
+"206
+[; ;main.c: 206:             }
+}
+[e :U 153 ]
+"207
+[; ;main.c: 207:             break;
+[e $U 147  ]
+"209
+[; ;main.c: 209:         case STATE_MOVING_DOWN:
+[e :U 156 ]
+"210
+[; ;main.c: 210:             if(event == EVENT_TIMER_TICK)
+[e $ ! == -> _event `ui -> . `E1777 2 `ui 157  ]
+"211
+[; ;main.c: 211:             {
+{
+"212
+[; ;main.c: 212:                 if(stateTickCounter >= 10)
+[e $ ! >= -> _stateTickCounter `i -> 10 `i 158  ]
+"213
+[; ;main.c: 213:                 {
+{
+"214
+[; ;main.c: 214:                     stateTickCounter = 0;
+[e = _stateTickCounter -> -> 0 `i `uc ]
+"215
+[; ;main.c: 215:                     currentFloor--;
+[e -- _currentFloor -> -> 1 `i `uc ]
+"216
+[; ;main.c: 216:                     lcdNeedsUpdate = 1;
+[e = _lcdNeedsUpdate -> -> 1 `i `uc ]
+"218
+[; ;main.c: 218:                     if(currentFloor <= targetFloor || floorRequests[currentFloor])
+[e $ ! || <= -> _currentFloor `i -> _targetFloor `i != -> *U + &U _floorRequests * -> _currentFloor `ux -> -> # *U &U _floorRequests `ui `ux `i -> 0 `i 159  ]
+"219
+[; ;main.c: 219:                     {
+{
+"220
+[; ;main.c: 220:                         floorRequests[currentFloor] = 0;
+[e = *U + &U _floorRequests * -> _currentFloor `ux -> -> # *U &U _floorRequests `ui `ux -> -> 0 `i `uc ]
+"221
+[; ;main.c: 221:                         StateMachine_Goto(STATE_DOOR_OPENING);
+[e ( _StateMachine_Goto (1 . `E1768 4 ]
+"222
+[; ;main.c: 222:                     }
+}
+[e :U 159 ]
+"223
+[; ;main.c: 223:                 }
+}
+[e :U 158 ]
+"224
+[; ;main.c: 224:             }
+}
+[e :U 157 ]
+"225
+[; ;main.c: 225:             break;
+[e $U 147  ]
+"227
+[; ;main.c: 227:         case STATE_DOOR_OPENING:
+[e :U 160 ]
+"228
+[; ;main.c: 228:             if(event == EVENT_TIMER_TICK)
+[e $ ! == -> _event `ui -> . `E1777 2 `ui 161  ]
+"229
+[; ;main.c: 229:             {
+{
+"230
+[; ;main.c: 230:                 if(stateTickCounter >= 5)
+[e $ ! >= -> _stateTickCounter `i -> 5 `i 162  ]
+"231
+[; ;main.c: 231:                 {
+{
+"232
+[; ;main.c: 232:                     StateMachine_Goto(STATE_DOOR_OPEN);
+[e ( _StateMachine_Goto (1 . `E1768 5 ]
+"233
+[; ;main.c: 233:                 }
+}
+[e :U 162 ]
+"234
+[; ;main.c: 234:             }
+}
+[e :U 161 ]
+"235
+[; ;main.c: 235:             break;
+[e $U 147  ]
+"237
+[; ;main.c: 237:         case STATE_DOOR_OPEN:
+[e :U 163 ]
+"238
+[; ;main.c: 238:             if(event == EVENT_TIMER_TICK)
+[e $ ! == -> _event `ui -> . `E1777 2 `ui 164  ]
+"239
+[; ;main.c: 239:             {
+{
+"240
+[; ;main.c: 240:                 if(stateTickCounter >= 20)
+[e $ ! >= -> _stateTickCounter `i -> 20 `i 165  ]
+"241
+[; ;main.c: 241:                 {
+{
+"242
+[; ;main.c: 242:                     StateMachine_Goto(STATE_DOOR_CLOSING);
+[e ( _StateMachine_Goto (1 . `E1768 6 ]
+"243
+[; ;main.c: 243:                 }
+}
+[e :U 165 ]
+"244
+[; ;main.c: 244:             }
+}
+[e :U 164 ]
+"245
+[; ;main.c: 245:             break;
+[e $U 147  ]
+"247
+[; ;main.c: 247:         case STATE_DOOR_CLOSING:
+[e :U 166 ]
+"248
+[; ;main.c: 248:             if(event == EVENT_TIMER_TICK)
+[e $ ! == -> _event `ui -> . `E1777 2 `ui 167  ]
+"249
+[; ;main.c: 249:             {
+{
+"250
+[; ;main.c: 250:                 if(stateTickCounter >= 5)
+[e $ ! >= -> _stateTickCounter `i -> 5 `i 168  ]
+"251
+[; ;main.c: 251:                 {
+{
+"252
+[; ;main.c: 252:                     if(HasAnyRequest())
+[e $ ! != -> ( _HasAnyRequest ..  `i -> 0 `i 169  ]
+"253
+[; ;main.c: 253:                     {
+{
+"254
+[; ;main.c: 254:                         StateMachine_Goto(STATE_REQUEST_RECEIVED);
+[e ( _StateMachine_Goto (1 . `E1768 1 ]
+"255
+[; ;main.c: 255:                         StateMachine_StartNextRequest();
+[e ( _StateMachine_StartNextRequest ..  ]
+"256
+[; ;main.c: 256:                     }
+}
+[e $U 170  ]
+"257
+[; ;main.c: 257:                     else
+[e :U 169 ]
+"258
+[; ;main.c: 258:                     {
+{
+"259
+[; ;main.c: 259:                         StateMachine_Goto(STATE_IDLE);
+[e ( _StateMachine_Goto (1 . `E1768 0 ]
+"260
+[; ;main.c: 260:                     }
+}
+[e :U 170 ]
+"261
+[; ;main.c: 261:                 }
+}
+[e :U 168 ]
+"262
+[; ;main.c: 262:             }
+}
+[e :U 167 ]
+"263
+[; ;main.c: 263:             break;
+[e $U 147  ]
+"265
+[; ;main.c: 265:         default:
+[e :U 171 ]
+"266
+[; ;main.c: 266:             StateMachine_Goto(STATE_IDLE);
+[e ( _StateMachine_Goto (1 . `E1768 0 ]
+"267
+[; ;main.c: 267:             break;
+[e $U 147  ]
+"268
+[; ;main.c: 268:     }
+}
+[e $U 147  ]
+[e :U 148 ]
+[e [\ -> _currentState `ui , $ -> . `E1768 0 `ui 149
+ , $ -> . `E1768 1 `ui 151
+ , $ -> . `E1768 2 `ui 152
+ , $ -> . `E1768 3 `ui 156
+ , $ -> . `E1768 4 `ui 160
+ , $ -> . `E1768 5 `ui 163
+ , $ -> . `E1768 6 `ui 166
+ 171 ]
+[e :U 147 ]
+"269
+[; ;main.c: 269: }
+[e :UE 145 ]
+}
+"271
+[; ;main.c: 271: void setup(void)
+[v _setup `(v ~T0 @X0 1 ef ]
+"272
+[; ;main.c: 272: {
+{
+[e :U _setup ]
+[f ]
+"274
+[; ;main.c: 274:     ANSEL = 0x00;
+[e = _ANSEL -> -> 0 `i `uc ]
+"275
+[; ;main.c: 275:     ANSELH = 0x00;
+[e = _ANSELH -> -> 0 `i `uc ]
+"278
+[; ;main.c: 278:     CM1CON0 = 0x00;
+[e = _CM1CON0 -> -> 0 `i `uc ]
+"279
+[; ;main.c: 279:     CM2CON0 = 0x00;
+[e = _CM2CON0 -> -> 0 `i `uc ]
+"282
+[; ;main.c: 282:     PORTC = 0x00;
+[e = _PORTC -> -> 0 `i `uc ]
+"283
+[; ;main.c: 283:     TRISC = 0x00;
+[e = _TRISC -> -> 0 `i `uc ]
+"288
+[; ;main.c: 288:     PORTB = 0xFF;
+[e = _PORTB -> -> 255 `i `uc ]
+"289
+[; ;main.c: 289:     TRISB = 0b11110000;
+[e = _TRISB -> -> 240 `i `uc ]
+"292
+[; ;main.c: 292:     OPTION_REGbits.nRBPU = 0;
+[e = . . _OPTION_REGbits 0 5 -> -> 0 `i `uc ]
+"293
+[; ;main.c: 293:     WPUB = 0b11110000;
+[e = _WPUB -> -> 240 `i `uc ]
+"302
+[; ;main.c: 302:     PORTD = 0x00;
+[e = _PORTD -> -> 0 `i `uc ]
+"303
+[; ;main.c: 303:     TRISD = 0x00;
+[e = _TRISD -> -> 0 `i `uc ]
+"306
+[; ;main.c: 306:     LCD_Init(screen);
+[e ( _LCD_Init (1 _screen ]
+"307
+[; ;main.c: 307:     do { LCD_Write( (0x01 & 0xF0) >> 4 ); LCD_Write( 0x01 & 0x0F); } while ( 0 );
+[e :U 175 ]
+{
+[e ( _LCD_Write (1 -> >> & -> 1 `i -> 240 `i -> 4 `i `uc ]
+[e ( _LCD_Write (1 -> & -> 1 `i -> 15 `i `uc ]
+}
+[e :U 174 ]
+"309
+[; ;main.c: 309:     LCD_Custom_Char(0, upArrow);
+[e ( _LCD_Custom_Char (2 , -> -> 0 `i `uc -> &U _upArrow `*Cuc ]
+"310
+[; ;main.c: 310:     LCD_Custom_Char(1, downArrow);
+[e ( _LCD_Custom_Char (2 , -> -> 1 `i `uc -> &U _downArrow `*Cuc ]
+"312
+[; ;main.c: 312:     Timer1_Init();
+[e ( _Timer1_Init ..  ]
+"313
+[; ;main.c: 313: }
+[e :UE 172 ]
+}
+"315
+[; ;main.c: 315: void Timer1_Init(void)
+[v _Timer1_Init `(v ~T0 @X0 1 ef ]
+"316
+[; ;main.c: 316: {
+{
+[e :U _Timer1_Init ]
+[f ]
+"317
+[; ;main.c: 317:     T1CONbits.TMR1ON = 0;
+[e = . . _T1CONbits 0 0 -> -> 0 `i `uc ]
+"323
+[; ;main.c: 323:     T1CONbits.TMR1CS = 0;
+[e = . . _T1CONbits 0 1 -> -> 0 `i `uc ]
+"327
+[; ;main.c: 327:     T1CONbits.T1CKPS1 = 1;
+[e = . . _T1CONbits 1 4 -> -> 1 `i `uc ]
+"328
+[; ;main.c: 328:     T1CONbits.T1CKPS0 = 1;
+[e = . . _T1CONbits 1 3 -> -> 1 `i `uc ]
+"330
+[; ;main.c: 330:     T1CONbits.T1OSCEN = 0;
+[e = . . _T1CONbits 0 3 -> -> 0 `i `uc ]
+"333
+[; ;main.c: 333:     TMR1H = ((unsigned char)(40536u >> 8));
+[e = _TMR1H -> >> -> 40536 `ui -> 8 `i `uc ]
+"334
+[; ;main.c: 334:     TMR1L = ((unsigned char)(40536u & 0x00FF));
+[e = _TMR1L -> & -> 40536 `ui -> -> 255 `i `ui `uc ]
+"336
+[; ;main.c: 336:     PIR1bits.TMR1IF = 0;
+[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
+"337
+[; ;main.c: 337:     PIE1bits.TMR1IE = 1;
+[e = . . _PIE1bits 0 0 -> -> 1 `i `uc ]
+"339
+[; ;main.c: 339:     INTCONbits.PEIE = 1;
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+"340
+[; ;main.c: 340:     INTCONbits.GIE = 1;
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+"342
+[; ;main.c: 342:     T1CONbits.TMR1ON = 1;
+[e = . . _T1CONbits 0 0 -> -> 1 `i `uc ]
+"343
+[; ;main.c: 343: }
+[e :UE 176 ]
+}
+"345
+[; ;main.c: 345: char Keypad_ReadRaw(void)
+[v _Keypad_ReadRaw `(uc ~T0 @X0 1 ef ]
+"346
+[; ;main.c: 346: {
+{
+[e :U _Keypad_ReadRaw ]
+[f ]
+"347
+[; ;main.c: 347:     unsigned char row;
+[v _row `uc ~T0 @X0 1 a ]
+"348
+[; ;main.c: 348:     unsigned char col;
+[v _col `uc ~T0 @X0 1 a ]
+"349
+[; ;main.c: 349:     unsigned char cols;
+[v _cols `uc ~T0 @X0 1 a ]
+"351
+[; ;main.c: 351:     const unsigned char rowPattern[4] = {
+[v F1816 `Cuc ~T0 @X0 -> 4 `i s rowPattern ]
+[i F1816
+:U ..
+-> -> 14 `i `uc
+-> -> 13 `i `uc
+-> -> 11 `i `uc
+-> -> 7 `i `uc
+..
+]
+"358
+[; ;main.c: 358:     PORTB = 0xFF;
+[e = _PORTB -> -> 255 `i `uc ]
+"360
+[; ;main.c: 360:     for(row = 0; row < 4; row++)
+{
+[e = _row -> -> 0 `i `uc ]
+[e $ < -> _row `i -> 4 `i 178  ]
+[e $U 179  ]
+[e :U 178 ]
+"361
+[; ;main.c: 361:     {
+{
+"362
+[; ;main.c: 362:         PORTB = 0xF0 | rowPattern[row];
+[e = _PORTB -> | -> 240 `i -> *U + &U F1816 * -> _row `ux -> -> # *U &U F1816 `ui `ux `i `uc ]
+"364
+[; ;main.c: 364:         _delay((unsigned long)((50)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+"366
+[; ;main.c: 366:         cols = (PORTB >> 4) & 0x0F;
+[e = _cols -> & >> -> _PORTB `i -> 4 `i -> 15 `i `uc ]
+"368
+[; ;main.c: 368:         for(col = 0; col < 4; col++)
+{
+[e = _col -> -> 0 `i `uc ]
+[e $ < -> _col `i -> 4 `i 181  ]
+[e $U 182  ]
+[e :U 181 ]
+"369
+[; ;main.c: 369:         {
+{
+"370
+[; ;main.c: 370:             if((cols & (1u << col)) == 0)
+[e $ ! == & -> _cols `ui << -> 1 `ui -> _col `i -> -> 0 `i `ui 184  ]
+"371
+[; ;main.c: 371:             {
+{
+"372
+[; ;main.c: 372:                 PORTB = 0xFF;
+[e = _PORTB -> -> 255 `i `uc ]
+"373
+[; ;main.c: 373:                 return keypadMap[row][col];
+[e ) *U + &U *U + &U _keypadMap * -> _row `ux -> * -> # *U &U *U &U _keypadMap `ui -> -> 4 `i `ui `ux * -> _col `ux -> -> # *U &U *U + &U _keypadMap * -> _row `ux -> * -> # *U &U *U &U _keypadMap `ui -> -> 4 `i `ui `ux `ui `ux ]
+[e $UE 177  ]
+"374
+[; ;main.c: 374:             }
+}
+[e :U 184 ]
+"375
+[; ;main.c: 375:         }
+}
+[e ++ _col -> -> 1 `i `uc ]
+[e $ < -> _col `i -> 4 `i 181  ]
+[e :U 182 ]
+}
+"376
+[; ;main.c: 376:     }
+}
+[e ++ _row -> -> 1 `i `uc ]
+[e $ < -> _row `i -> 4 `i 178  ]
+[e :U 179 ]
+}
+"378
+[; ;main.c: 378:     PORTB = 0xFF;
+[e = _PORTB -> -> 255 `i `uc ]
+"379
+[; ;main.c: 379:     return '\0';
+[e ) -> -> 0 `ui `uc ]
+[e $UE 177  ]
+"380
+[; ;main.c: 380: }
+[e :UE 177 ]
+}
+"382
+[; ;main.c: 382: char Keypad_GetKey(void)
+[v _Keypad_GetKey `(uc ~T0 @X0 1 ef ]
+"383
+[; ;main.c: 383: {
+{
+[e :U _Keypad_GetKey ]
+[f ]
+"384
+[; ;main.c: 384:     static char lastKey = '\0';
+[v F1819 `uc ~T0 @X0 1 s lastKey ]
+[i F1819
+-> -> 0 `ui `uc
+]
+"386
+[; ;main.c: 386:     char rawKey = Keypad_ReadRaw();
+[v _rawKey `uc ~T0 @X0 1 a ]
+[e = _rawKey ( _Keypad_ReadRaw ..  ]
+"388
+[; ;main.c: 388:     if(rawKey != '\0' && lastKey == '\0')
+[e $ ! && != -> _rawKey `ui -> 0 `ui == -> F1819 `ui -> 0 `ui 186  ]
+"389
+[; ;main.c: 389:     {
+{
+"390
+[; ;main.c: 390:         lastKey = rawKey;
+[e = F1819 _rawKey ]
+"391
+[; ;main.c: 391:         return rawKey;
+[e ) _rawKey ]
+[e $UE 185  ]
+"392
+[; ;main.c: 392:     }
+}
+[e :U 186 ]
+"394
+[; ;main.c: 394:     if(rawKey == '\0')
+[e $ ! == -> _rawKey `ui -> 0 `ui 187  ]
+"395
+[; ;main.c: 395:     {
+{
+"396
+[; ;main.c: 396:         lastKey = '\0';
+[e = F1819 -> -> 0 `ui `uc ]
+"397
+[; ;main.c: 397:     }
+}
+[e :U 187 ]
+"399
+[; ;main.c: 399:     return '\0';
+[e ) -> -> 0 `ui `uc ]
+[e $UE 185  ]
+"400
+[; ;main.c: 400: }
+[e :UE 185 ]
+}
+"402
+[; ;main.c: 402: Event_t Event_Get(void)
+[v _Event_Get `(E1777 ~T0 @X0 1 ef ]
+"403
+[; ;main.c: 403: {
+{
+[e :U _Event_Get ]
+[f ]
+"404
+[; ;main.c: 404:     char key = Keypad_GetKey();
+[v _key `uc ~T0 @X0 1 a ]
+[e = _key ( _Keypad_GetKey ..  ]
+"406
+[; ;main.c: 406:     if(key >= '1' && key <= '6')
+[e $ ! && >= -> _key `ui -> 49 `ui <= -> _key `ui -> 54 `ui 189  ]
+"407
+[; ;main.c: 407:     {
+{
+"408
+[; ;main.c: 408:         AddFloorRequest((unsigned char)(key - '0'));
+[e ( _AddFloorRequest (1 -> - -> _key `ui -> 48 `ui `uc ]
+"409
+[; ;main.c: 409:         return EVENT_FLOOR_REQUEST;
+[e ) . `E1777 1 ]
+[e $UE 188  ]
+"410
+[; ;main.c: 410:     }
+}
+[e :U 189 ]
+"412
+[; ;main.c: 412:     if(timerTicksPending > 0)
+[e $ ! > -> _timerTicksPending `i -> 0 `i 190  ]
+"413
+[; ;main.c: 413:     {
+{
+"414
+[; ;main.c: 414:         timerTicksPending--;
+[e -- _timerTicksPending -> -> 1 `i `Vuc ]
+"415
+[; ;main.c: 415:         return EVENT_TIMER_TICK;
+[e ) . `E1777 2 ]
+[e $UE 188  ]
+"416
+[; ;main.c: 416:     }
+}
+[e :U 190 ]
+"418
+[; ;main.c: 418:     return EVENT_NONE;
+[e ) . `E1777 0 ]
+[e $UE 188  ]
+"419
+[; ;main.c: 419: }
+[e :UE 188 ]
+}
+"421
+[; ;main.c: 421: void AddFloorRequest(unsigned char floor)
+[v _AddFloorRequest `(v ~T0 @X0 1 ef1`uc ]
+"422
+[; ;main.c: 422: {
+{
+[e :U _AddFloorRequest ]
+"421
+[; ;main.c: 421: void AddFloorRequest(unsigned char floor)
+[v _floor `uc ~T0 @X0 1 r1 ]
+"422
+[; ;main.c: 422: {
+[f ]
+"423
+[; ;main.c: 423:     if(floor >= 1 && floor <= 6)
+[e $ ! && >= -> _floor `i -> 1 `i <= -> _floor `i -> 6 `i 192  ]
+"424
+[; ;main.c: 424:     {
+{
+"425
+[; ;main.c: 425:         requestedFloor = floor;
+[e = _requestedFloor _floor ]
+"426
+[; ;main.c: 426:         floorRequests[floor] = 1;
+[e = *U + &U _floorRequests * -> _floor `ux -> -> # *U &U _floorRequests `ui `ux -> -> 1 `i `uc ]
+"427
+[; ;main.c: 427:         lcdNeedsUpdate = 1;
+[e = _lcdNeedsUpdate -> -> 1 `i `uc ]
+"428
+[; ;main.c: 428:     }
+}
+[e :U 192 ]
+"429
+[; ;main.c: 429: }
+[e :UE 191 ]
+}
+"431
+[; ;main.c: 431: unsigned char HasAnyRequest(void)
+[v _HasAnyRequest `(uc ~T0 @X0 1 ef ]
+"432
+[; ;main.c: 432: {
+{
+[e :U _HasAnyRequest ]
+[f ]
+"433
+[; ;main.c: 433:     unsigned char floor;
+[v _floor `uc ~T0 @X0 1 a ]
+"435
+[; ;main.c: 435:     for(floor = 1; floor <= 6; floor++)
+{
+[e = _floor -> -> 1 `i `uc ]
+[e $ <= -> _floor `i -> 6 `i 194  ]
+[e $U 195  ]
+[e :U 194 ]
+"436
+[; ;main.c: 436:     {
+{
+"437
+[; ;main.c: 437:         if(floorRequests[floor])
+[e $ ! != -> *U + &U _floorRequests * -> _floor `ux -> -> # *U &U _floorRequests `ui `ux `i -> 0 `i 197  ]
+"438
+[; ;main.c: 438:         {
+{
+"439
+[; ;main.c: 439:             return 1;
+[e ) -> -> 1 `i `uc ]
+[e $UE 193  ]
+"440
+[; ;main.c: 440:         }
+}
+[e :U 197 ]
+"441
+[; ;main.c: 441:     }
+}
+[e ++ _floor -> -> 1 `i `uc ]
+[e $ <= -> _floor `i -> 6 `i 194  ]
+[e :U 195 ]
+}
+"443
+[; ;main.c: 443:     return 0;
+[e ) -> -> 0 `i `uc ]
+[e $UE 193  ]
+"444
+[; ;main.c: 444: }
+[e :UE 193 ]
+}
+"446
+[; ;main.c: 446: unsigned char SelectNextFloor(void)
+[v _SelectNextFloor `(uc ~T0 @X0 1 ef ]
+"447
+[; ;main.c: 447: {
+{
+[e :U _SelectNextFloor ]
+[f ]
+"448
+[; ;main.c: 448:     unsigned char floor;
+[v _floor `uc ~T0 @X0 1 a ]
+"450
+[; ;main.c: 450:     if(floorRequests[currentFloor])
+[e $ ! != -> *U + &U _floorRequests * -> _currentFloor `ux -> -> # *U &U _floorRequests `ui `ux `i -> 0 `i 199  ]
+"451
+[; ;main.c: 451:     {
+{
+"452
+[; ;main.c: 452:         return currentFloor;
+[e ) _currentFloor ]
+[e $UE 198  ]
+"453
+[; ;main.c: 453:     }
+}
+[e :U 199 ]
+"456
+[; ;main.c: 456:     for(floor = currentFloor + 1; floor <= 6; floor++)
+{
+[e = _floor -> + -> _currentFloor `i -> 1 `i `uc ]
+[e $ <= -> _floor `i -> 6 `i 200  ]
+[e $U 201  ]
+[e :U 200 ]
+"457
+[; ;main.c: 457:     {
+{
+"458
+[; ;main.c: 458:         if(floorRequests[floor])
+[e $ ! != -> *U + &U _floorRequests * -> _floor `ux -> -> # *U &U _floorRequests `ui `ux `i -> 0 `i 203  ]
+"459
+[; ;main.c: 459:         {
+{
+"460
+[; ;main.c: 460:             return floor;
+[e ) _floor ]
+[e $UE 198  ]
+"461
+[; ;main.c: 461:         }
+}
+[e :U 203 ]
+"462
+[; ;main.c: 462:     }
+}
+[e ++ _floor -> -> 1 `i `uc ]
+[e $ <= -> _floor `i -> 6 `i 200  ]
+[e :U 201 ]
+}
+"465
+[; ;main.c: 465:     for(floor = currentFloor; floor > 1; floor--)
+{
+[e = _floor _currentFloor ]
+[e $ > -> _floor `i -> 1 `i 204  ]
+[e $U 205  ]
+[e :U 204 ]
+"466
+[; ;main.c: 466:     {
+{
+"467
+[; ;main.c: 467:         if(floorRequests[floor - 1])
+[e $ ! != -> *U + &U _floorRequests * -> -> - -> _floor `i -> 1 `i `ui `ux -> -> # *U &U _floorRequests `ui `ux `i -> 0 `i 207  ]
+"468
+[; ;main.c: 468:         {
+{
+"469
+[; ;main.c: 469:             return floor - 1;
+[e ) -> - -> _floor `i -> 1 `i `uc ]
+[e $UE 198  ]
+"470
+[; ;main.c: 470:         }
+}
+[e :U 207 ]
+"471
+[; ;main.c: 471:     }
+}
+[e -- _floor -> -> 1 `i `uc ]
+[e $ > -> _floor `i -> 1 `i 204  ]
+[e :U 205 ]
+}
+"473
+[; ;main.c: 473:     return currentFloor;
+[e ) _currentFloor ]
+[e $UE 198  ]
+"474
+[; ;main.c: 474: }
+[e :UE 198 ]
+}
+"476
+[; ;main.c: 476: void StateMachine_Goto(State_t nextState)
+[v _StateMachine_Goto `(v ~T0 @X0 1 ef1`E1768 ]
+"477
+[; ;main.c: 477: {
+{
+[e :U _StateMachine_Goto ]
+"476
+[; ;main.c: 476: void StateMachine_Goto(State_t nextState)
+[v _nextState `E1768 ~T0 @X0 1 r1 ]
+"477
+[; ;main.c: 477: {
+[f ]
+"478
+[; ;main.c: 478:     currentState = nextState;
+[e = _currentState _nextState ]
+"479
+[; ;main.c: 479:     stateTickCounter = 0;
+[e = _stateTickCounter -> -> 0 `i `uc ]
+"480
+[; ;main.c: 480:     lcdNeedsUpdate = 1;
+[e = _lcdNeedsUpdate -> -> 1 `i `uc ]
+"481
+[; ;main.c: 481: }
+[e :UE 208 ]
+}
+"483
+[; ;main.c: 483: void StateMachine_StartNextRequest(void)
+[v _StateMachine_StartNextRequest `(v ~T0 @X0 1 ef ]
+"484
+[; ;main.c: 484: {
+{
+[e :U _StateMachine_StartNextRequest ]
+[f ]
+"485
+[; ;main.c: 485:     if(!HasAnyRequest())
+[e $ ! ! != -> ( _HasAnyRequest ..  `i -> 0 `i 210  ]
+"486
+[; ;main.c: 486:     {
+{
+"487
+[; ;main.c: 487:         StateMachine_Goto(STATE_IDLE);
+[e ( _StateMachine_Goto (1 . `E1768 0 ]
+"488
+[; ;main.c: 488:         return;
+[e $UE 209  ]
+"489
+[; ;main.c: 489:     }
+}
+[e :U 210 ]
+"491
+[; ;main.c: 491:     targetFloor = SelectNextFloor();
+[e = _targetFloor ( _SelectNextFloor ..  ]
+"493
+[; ;main.c: 493:     if(targetFloor > currentFloor)
+[e $ ! > -> _targetFloor `i -> _currentFloor `i 211  ]
+"494
+[; ;main.c: 494:     {
+{
+"495
+[; ;main.c: 495:         StateMachine_Goto(STATE_MOVING_UP);
+[e ( _StateMachine_Goto (1 . `E1768 2 ]
+"496
+[; ;main.c: 496:     }
+}
+[e $U 212  ]
+"497
+[; ;main.c: 497:     else if(targetFloor < currentFloor)
+[e :U 211 ]
+[e $ ! < -> _targetFloor `i -> _currentFloor `i 213  ]
+"498
+[; ;main.c: 498:     {
+{
+"499
+[; ;main.c: 499:         StateMachine_Goto(STATE_MOVING_DOWN);
+[e ( _StateMachine_Goto (1 . `E1768 3 ]
+"500
+[; ;main.c: 500:     }
+}
+[e $U 214  ]
+"501
+[; ;main.c: 501:     else
+[e :U 213 ]
+"502
+[; ;main.c: 502:     {
+{
+"503
+[; ;main.c: 503:         floorRequests[currentFloor] = 0;
+[e = *U + &U _floorRequests * -> _currentFloor `ux -> -> # *U &U _floorRequests `ui `ux -> -> 0 `i `uc ]
+"504
+[; ;main.c: 504:         StateMachine_Goto(STATE_DOOR_OPENING);
+[e ( _StateMachine_Goto (1 . `E1768 4 ]
+"505
+[; ;main.c: 505:     }
+}
+[e :U 214 ]
+[e :U 212 ]
+"506
+[; ;main.c: 506: }
+[e :UE 209 ]
+}
+"509
+[; ;main.c: 509: void Outputs_Update(void)
+[v _Outputs_Update `(v ~T0 @X0 1 ef ]
+"510
+[; ;main.c: 510: {
+{
+[e :U _Outputs_Update ]
+[f ]
+"511
+[; ;main.c: 511:     unsigned char ledMask = 0x00;
+[v _ledMask `uc ~T0 @X0 1 a ]
+[e = _ledMask -> -> 0 `i `uc ]
+"514
+[; ;main.c: 514:     if(currentFloor >= 1 && currentFloor <= 6)
+[e $ ! && >= -> _currentFloor `i -> 1 `i <= -> _currentFloor `i -> 6 `i 216  ]
+"515
+[; ;main.c: 515:     {
+{
+"516
+[; ;main.c: 516:         ledMask = (unsigned char)(1u << (currentFloor - 1));
+[e = _ledMask -> << -> 1 `ui - -> _currentFloor `i -> 1 `i `uc ]
+"517
+[; ;main.c: 517:     }
+}
+[e :U 216 ]
+"519
+[; ;main.c: 519:     PORTD = ledMask;
+[e = _PORTD _ledMask ]
+"522
+[; ;main.c: 522:     if(!lcdNeedsUpdate)
+[e $ ! ! != -> _lcdNeedsUpdate `i -> 0 `i 217  ]
+"523
+[; ;main.c: 523:     {
+{
+"524
+[; ;main.c: 524:         return;
+[e $UE 215  ]
+"525
+[; ;main.c: 525:     }
+}
+[e :U 217 ]
+"527
+[; ;main.c: 527:     lcdNeedsUpdate = 0;
+[e = _lcdNeedsUpdate -> -> 0 `i `uc ]
+"529
+[; ;main.c: 529:     do { LCD_Write( (0x01 & 0xF0) >> 4 ); LCD_Write( 0x01 & 0x0F); } while ( 0 );
+[e :U 220 ]
+{
+[e ( _LCD_Write (1 -> >> & -> 1 `i -> 240 `i -> 4 `i `uc ]
+[e ( _LCD_Write (1 -> & -> 1 `i -> 15 `i `uc ]
+}
+[e :U 219 ]
+"532
+[; ;main.c: 532:     do { if ( 0 == 0 ) { do { LCD_Write( (0x80 + 1 & 0xF0) >> 4 ); LCD_Write( 0x80 + 1 & 0x0F); } while ( 0 ); } else if ( 0 == 1 ) { do { LCD_Write( (0xC0 + 1 & 0xF0) >> 4 ); LCD_Write( 0xC0 + 1 & 0x0F); } while ( 0 ); } else if ( 0 == 2 ) { do { LCD_Write( (0x94 + 1 & 0xF0) >> 4 ); LCD_Write( 0x94 + 1 & 0x0F); } while ( 0 ); } else if ( 0 == 3 ) { do { LCD_Write( (0xD4 + 1 & 0xF0) >> 4 ); LCD_Write( 0xD4 + 1 & 0x0F); } while ( 0 ); } } while ( 0 );
+[e :U 223 ]
+{
+[e $ ! == -> 0 `i -> 0 `i 224  ]
+{
+[e :U 227 ]
+{
+[e ( _LCD_Write (1 -> >> & + -> 128 `i -> 1 `i -> 240 `i -> 4 `i `uc ]
+[e ( _LCD_Write (1 -> & + -> 128 `i -> 1 `i -> 15 `i `uc ]
+}
+[e :U 226 ]
+}
+[e $U 228  ]
+[e :U 224 ]
+[e $ ! == -> 0 `i -> 1 `i 229  ]
+{
+[e :U 232 ]
+{
+[e ( _LCD_Write (1 -> >> & + -> 192 `i -> 1 `i -> 240 `i -> 4 `i `uc ]
+[e ( _LCD_Write (1 -> & + -> 192 `i -> 1 `i -> 15 `i `uc ]
+}
+[e :U 231 ]
+}
+[e $U 233  ]
+[e :U 229 ]
+[e $ ! == -> 0 `i -> 2 `i 234  ]
+{
+[e :U 237 ]
+{
+[e ( _LCD_Write (1 -> >> & + -> 148 `i -> 1 `i -> 240 `i -> 4 `i `uc ]
+[e ( _LCD_Write (1 -> & + -> 148 `i -> 1 `i -> 15 `i `uc ]
+}
+[e :U 236 ]
+}
+[e $U 238  ]
+[e :U 234 ]
+[e $ ! == -> 0 `i -> 3 `i 239  ]
+{
+[e :U 242 ]
+{
+[e ( _LCD_Write (1 -> >> & + -> 212 `i -> 1 `i -> 240 `i -> 4 `i `uc ]
+[e ( _LCD_Write (1 -> & + -> 212 `i -> 1 `i -> 15 `i `uc ]
+}
+[e :U 241 ]
+}
+[e :U 239 ]
+[e :U 238 ]
+[e :U 233 ]
+[e :U 228 ]
+}
+[e :U 222 ]
+"533
+[; ;main.c: 533:     LCD_putrs("Piso:");
+[e ( _LCD_putrs (1 :s 1C ]
+"534
+[; ;main.c: 534:     LCD_putc(currentFloor + '0');
+[e ( _LCD_putc (1 -> + -> _currentFloor `ui -> 48 `ui `uc ]
+"536
+[; ;main.c: 536:     LCD_putrs(" Obj:");
+[e ( _LCD_putrs (1 :s 2C ]
+"538
+[; ;main.c: 538:     if(currentState == STATE_IDLE && !HasAnyRequest())
+[e $ ! && == -> _currentState `ui -> . `E1768 0 `ui ! != -> ( _HasAnyRequest ..  `i -> 0 `i 243  ]
+"539
+[; ;main.c: 539:     {
+{
+"540
+[; ;main.c: 540:         LCD_putc('-');
+[e ( _LCD_putc (1 -> -> 45 `ui `uc ]
+"541
+[; ;main.c: 541:     }
+}
+[e $U 244  ]
+"542
+[; ;main.c: 542:     else
+[e :U 243 ]
+"543
+[; ;main.c: 543:     {
+{
+"544
+[; ;main.c: 544:         LCD_putc(targetFloor + '0');
+[e ( _LCD_putc (1 -> + -> _targetFloor `ui -> 48 `ui `uc ]
+"545
+[; ;main.c: 545:     }
+}
+[e :U 244 ]
+"548
+[; ;main.c: 548:     do { if ( 1 == 0 ) { do { LCD_Write( (0x80 + 1 & 0xF0) >> 4 ); LCD_Write( 0x80 + 1 & 0x0F); } while ( 0 ); } else if ( 1 == 1 ) { do { LCD_Write( (0xC0 + 1 & 0xF0) >> 4 ); LCD_Write( 0xC0 + 1 & 0x0F); } while ( 0 ); } else if ( 1 == 2 ) { do { LCD_Write( (0x94 + 1 & 0xF0) >> 4 ); LCD_Write( 0x94 + 1 & 0x0F); } while ( 0 ); } else if ( 1 == 3 ) { do { LCD_Write( (0xD4 + 1 & 0xF0) >> 4 ); LCD_Write( 0xD4 + 1 & 0x0F); } while ( 0 ); } } while ( 0 );
+[e :U 247 ]
+{
+[e $ ! == -> 1 `i -> 0 `i 248  ]
+{
+[e :U 251 ]
+{
+[e ( _LCD_Write (1 -> >> & + -> 128 `i -> 1 `i -> 240 `i -> 4 `i `uc ]
+[e ( _LCD_Write (1 -> & + -> 128 `i -> 1 `i -> 15 `i `uc ]
+}
+[e :U 250 ]
+}
+[e $U 252  ]
+[e :U 248 ]
+[e $ ! == -> 1 `i -> 1 `i 253  ]
+{
+[e :U 256 ]
+{
+[e ( _LCD_Write (1 -> >> & + -> 192 `i -> 1 `i -> 240 `i -> 4 `i `uc ]
+[e ( _LCD_Write (1 -> & + -> 192 `i -> 1 `i -> 15 `i `uc ]
+}
+[e :U 255 ]
+}
+[e $U 257  ]
+[e :U 253 ]
+[e $ ! == -> 1 `i -> 2 `i 258  ]
+{
+[e :U 261 ]
+{
+[e ( _LCD_Write (1 -> >> & + -> 148 `i -> 1 `i -> 240 `i -> 4 `i `uc ]
+[e ( _LCD_Write (1 -> & + -> 148 `i -> 1 `i -> 15 `i `uc ]
+}
+[e :U 260 ]
+}
+[e $U 262  ]
+[e :U 258 ]
+[e $ ! == -> 1 `i -> 3 `i 263  ]
+{
+[e :U 266 ]
+{
+[e ( _LCD_Write (1 -> >> & + -> 212 `i -> 1 `i -> 240 `i -> 4 `i `uc ]
+[e ( _LCD_Write (1 -> & + -> 212 `i -> 1 `i -> 15 `i `uc ]
+}
+[e :U 265 ]
+}
+[e :U 263 ]
+[e :U 262 ]
+[e :U 257 ]
+[e :U 252 ]
+}
+[e :U 246 ]
+"550
+[; ;main.c: 550:     switch(currentState)
+[e $U 268  ]
+"551
+[; ;main.c: 551:     {
+{
+"552
+[; ;main.c: 552:         case STATE_IDLE:
+[e :U 269 ]
+"553
+[; ;main.c: 553:             LCD_putrs("En espera");
+[e ( _LCD_putrs (1 :s 3C ]
+"554
+[; ;main.c: 554:             break;
+[e $U 267  ]
+"556
+[; ;main.c: 556:         case STATE_REQUEST_RECEIVED:
+[e :U 270 ]
+"557
+[; ;main.c: 557:             LCD_putrs("Procesando");
+[e ( _LCD_putrs (1 :s 4C ]
+"558
+[; ;main.c: 558:             break;
+[e $U 267  ]
+"560
+[; ;main.c: 560:         case STATE_MOVING_UP:
+[e :U 271 ]
+"561
+[; ;main.c: 561:             LCD_putrs("Subiendo");
+[e ( _LCD_putrs (1 :s 5C ]
+"562
+[; ;main.c: 562:             LCD_putc(0);
+[e ( _LCD_putc (1 -> -> 0 `i `uc ]
+"563
+[; ;main.c: 563:             break;
+[e $U 267  ]
+"565
+[; ;main.c: 565:         case STATE_MOVING_DOWN:
+[e :U 272 ]
+"566
+[; ;main.c: 566:             LCD_putrs("Bajando");
+[e ( _LCD_putrs (1 :s 6C ]
+"567
+[; ;main.c: 567:             LCD_putc(1);
+[e ( _LCD_putc (1 -> -> 1 `i `uc ]
+"568
+[; ;main.c: 568:             break;
+[e $U 267  ]
+"570
+[; ;main.c: 570:         case STATE_DOOR_OPENING:
+[e :U 273 ]
+"571
+[; ;main.c: 571:             LCD_putrs("Abriendo");
+[e ( _LCD_putrs (1 :s 7C ]
+"572
+[; ;main.c: 572:             break;
+[e $U 267  ]
+"574
+[; ;main.c: 574:         case STATE_DOOR_OPEN:
+[e :U 274 ]
+"575
+[; ;main.c: 575:             LCD_putrs("Puerta abierta");
+[e ( _LCD_putrs (1 :s 8C ]
+"576
+[; ;main.c: 576:             break;
+[e $U 267  ]
+"578
+[; ;main.c: 578:         case STATE_DOOR_CLOSING:
+[e :U 275 ]
+"579
+[; ;main.c: 579:             LCD_putrs("Cerrando");
+[e ( _LCD_putrs (1 :s 9C ]
+"580
+[; ;main.c: 580:             break;
+[e $U 267  ]
+"582
+[; ;main.c: 582:         default:
+[e :U 276 ]
+"583
+[; ;main.c: 583:             LCD_putrs("Error");
+[e ( _LCD_putrs (1 :s 10C ]
+"584
+[; ;main.c: 584:             break;
+[e $U 267  ]
+"585
+[; ;main.c: 585:     }
+}
+[e $U 267  ]
+[e :U 268 ]
+[e [\ -> _currentState `ui , $ -> . `E1768 0 `ui 269
+ , $ -> . `E1768 1 `ui 270
+ , $ -> . `E1768 2 `ui 271
+ , $ -> . `E1768 3 `ui 272
+ , $ -> . `E1768 4 `ui 273
+ , $ -> . `E1768 5 `ui 274
+ , $ -> . `E1768 6 `ui 275
+ 276 ]
+[e :U 267 ]
+"586
+[; ;main.c: 586: }
+[e :UE 215 ]
+}
+[v $root$_main `(v ~T0 @X0 0 e ]
+"588
+[; ;main.c: 588: void main(void)
+[v _main `(v ~T0 @X0 1 ef ]
+"589
+[; ;main.c: 589: {
+{
+[e :U _main ]
+[f ]
+"590
+[; ;main.c: 590:     setup();
+[e ( _setup ..  ]
+"592
+[; ;main.c: 592:     while(1)
+[e :U 279 ]
+"593
+[; ;main.c: 593:     {
+{
+"594
+[; ;main.c: 594:         Event_t event = Event_Get();
+[v _event `E1777 ~T0 @X0 1 a ]
+[e = _event ( _Event_Get ..  ]
+"596
+[; ;main.c: 596:         if(event != EVENT_NONE) {
+[e $ ! != -> _event `ui -> . `E1777 0 `ui 281  ]
+{
+"597
+[; ;main.c: 597:             StateMachine_Update(event);
+[e ( _StateMachine_Update (1 _event ]
+"598
+[; ;main.c: 598:         }
+}
+[e :U 281 ]
+"600
+[; ;main.c: 600:         Outputs_Update();
+[e ( _Outputs_Update ..  ]
+"601
+[; ;main.c: 601:     }
+}
+[e :U 278 ]
+[e $U 279  ]
+[e :U 280 ]
+"602
+[; ;main.c: 602: }
+[e :UE 277 ]
+}
+[v $root$_ISR `(v ~T0 @X0 0 e ]
+"604
+[; ;main.c: 604: void __attribute__((picinterrupt(("")))) ISR(void)
+[v _ISR `(v ~T1 @X0 1 ef ]
+"605
+[; ;main.c: 605: {
+{
+[e :U _ISR ]
+[f ]
+"606
+[; ;main.c: 606:     if(PIR1bits.TMR1IF && PIE1bits.TMR1IE)
+[e $ ! && != -> . . _PIR1bits 0 0 `i -> 0 `i != -> . . _PIE1bits 0 0 `i -> 0 `i 283  ]
+"607
+[; ;main.c: 607:     {
+{
+"608
+[; ;main.c: 608:         TMR1H = ((unsigned char)(40536u >> 8));
+[e = _TMR1H -> >> -> 40536 `ui -> 8 `i `uc ]
+"609
+[; ;main.c: 609:         TMR1L = ((unsigned char)(40536u & 0x00FF));
+[e = _TMR1L -> & -> 40536 `ui -> -> 255 `i `ui `uc ]
+"611
+[; ;main.c: 611:         PIR1bits.TMR1IF = 0;
+[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
+"613
+[; ;main.c: 613:         if(timerTicksPending < 250)
+[e $ ! < -> _timerTicksPending `i -> 250 `i 284  ]
+"614
+[; ;main.c: 614:         {
+{
+"615
+[; ;main.c: 615:             timerTicksPending++;
+[e ++ _timerTicksPending -> -> 1 `i `Vuc ]
+"616
+[; ;main.c: 616:         }
+}
+[e :U 284 ]
+"617
+[; ;main.c: 617:     }
+}
+[e :U 283 ]
+"618
+[; ;main.c: 618: }
+[e :UE 282 ]
+}
+[a 10C 69 114 114 111 114 0 ]
+[a 7C 65 98 114 105 101 110 100 111 0 ]
+[a 5C 83 117 98 105 101 110 100 111 0 ]
+[a 4C 80 114 111 99 101 115 97 110 100 111 0 ]
+[a 9C 67 101 114 114 97 110 100 111 0 ]
+[a 6C 66 97 106 97 110 100 111 0 ]
+[a 8C 80 117 101 114 116 97 32 97 98 105 101 114 116 97 0 ]
+[a 3C 69 110 32 101 115 112 101 114 97 0 ]
+[a 1C 80 105 115 111 58 0 ]
+[a 2C 32 79 98 106 58 0 ]
