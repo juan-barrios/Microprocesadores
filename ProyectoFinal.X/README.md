@@ -42,6 +42,7 @@ Se desarrolló una lógica de control capaz de interpretar las pulsaciones de la
 ## Conclusiones
 
 Juan:
+
 Este proyecto final me sirvió para poder comprender de una manera más concreta los temas vistos en clase. Además de ayudarme a desarrollar habilidades de investigación, de modo que pudiera aprender sobre la programación basada en eventos, así como aspectos técnicos del PIC, que nos servirían para poder completar el proyecto.
 
 Erick:
