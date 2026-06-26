@@ -13,7 +13,7 @@ Diseñar, programar e implementar un sistema embebido que simule el funcionamien
 * **Microcontrolador:** PIC16F887 (Microchip)
 * **Dispositivo de Entrada:** Teclado matricial (Control de pisos/peticiones)
 * **Actuador Visual Principal:** Pantalla LCD 16x2
-* **Control Analógico:** 1 Potenciómetro de 1k$\Omega$ (Regulación de contraste del LCD)
+* **Control Analógico:** 1 Potenciómetro de 1k $\Omega$ (Regulación de contraste del LCD)
 * **Indicadores Luminosos:** 6 LEDs (Representación de los pisos)
 * **Soporte Físico:** Protoboard
 * **Alimentación:** Fuente de poder regulada de 5V
